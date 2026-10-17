@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zelasis — Bots Discord sur mesure</title>
+<meta name="description" content="Bots et modules Discord sur mesure : tickets, modération, économie, niveaux… Modules dès 5 €, bots complets dès 15 €. Devis gratuit sous 24 h.">
+<meta property="og:title" content="Zelasis — Bots Discord sur mesure">
+<meta property="og:description" content="Modules dès 5 €, bots complets dès 15 €. Devis gratuit sous 24 h.">
+<meta name="theme-color" content="#070C1A">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#070C1A}
+a{color:#E6ECFA}a:hover{color:#FFFFFF}
+@property --a{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes pop{0%{opacity:0;transform:translateY(12px) scale(.96)}100%{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes floatsm{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(91,155,255,.6)}60%{box-shadow:0 0 0 12px rgba(91,155,255,0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(120px,60px) scale(1.15)}66%{transform:translate(-60px,120px) scale(.9)}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-140px,-80px) scale(1.2)}}
+@keyframes gridmove{from{background-position:0 0,0 0}to{background-position:0 48px,48px 0}}
+@keyframes spin{to{--a:360deg}}
+@keyframes shine{0%,55%{transform:translateX(-130%)}100%{transform:translateX(130%)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes rot{0%,18%{transform:translateY(0)}25%,43%{transform:translateY(-1.1em)}50%,68%{transform:translateY(-2.2em)}75%,93%{transform:translateY(-3.3em)}100%{transform:translateY(-4.4em)}}
+@keyframes fill{0%{width:8%}70%,100%{width:78%}}
+@keyframes typing{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.pop{animation:pop .6s cubic-bezier(.2,.8,.2,1) both}
+.d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}.d5{animation-delay:.7s}
+.m1{animation-delay:.9s}.m2{animation-delay:1.7s}.m3{animation-delay:2.5s}.m4{animation-delay:3.3s}.m5{animation-delay:4.1s}
+.float{animation:float 5s ease-in-out infinite}
+.floatsm{animation:floatsm 3.2s ease-in-out infinite}
+.pulse{animation:pulse 2.4s ease-out infinite}
+.dot{animation:blink 1.4s ease-in-out infinite}
+.orb1{animation:drift1 18s ease-in-out infinite}
+.orb2{animation:drift2 22s ease-in-out infinite}
+.gridbg{animation:gridmove 6s linear infinite}
+.spin{animation:spin 4s linear infinite}
+.shine{position:relative;overflow:hidden}
+.shine::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.6) 50%,transparent 70%);transform:translateX(-130%);animation:shine 3.4s ease-in-out infinite;pointer-events:none}
+.marquee{animation:marquee 28s linear infinite}
+.rot{animation:rot 9s cubic-bezier(.7,0,.3,1) infinite}
+.fill{animation:fill 3.5s cubic-bezier(.4,0,.2,1) infinite alternate}
+.t1{animation:typing 1.2s infinite}.t2{animation:typing 1.2s .15s infinite}.t3{animation:typing 1.2s .3s infinite}
+.card{transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease,box-shadow .35s ease}
+.card:hover{transform:translateY(-10px) scale(1.02);border-color:#5B9BFF;background-color:#111D3A;box-shadow:0 24px 60px -20px rgba(91,155,255,.45)}
+.card .price{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.card:hover .price{transform:scale(1.08)}
+.btn{transition:transform .2s ease,filter .2s ease,border-color .2s ease,box-shadow .25s ease}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.12);border-color:#5B9BFF;box-shadow:0 12px 30px -10px rgba(91,155,255,.6)}
+.link{transition:color .2s ease}.link:hover{color:#FFFFFF}
+.step{transition:transform .3s ease}.step:hover{transform:translateY(-6px)}
+@keyframes twinkle{0%{opacity:.35}100%{opacity:1}}
+@keyframes skyspin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes shoot{0%{transform:rotate(215deg) translateX(0);opacity:0}1.5%{opacity:1}9%{transform:rotate(215deg) translateX(1100px);opacity:0}100%{transform:rotate(215deg) translateX(1100px);opacity:0}}
+@keyframes nebula{0%,100%{opacity:.35;transform:rotate(-28deg) scale(1)}50%{opacity:.55;transform:rotate(-24deg) scale(1.08)}}
+.sky{position:absolute;top:50%;left:50%;width:2400px;height:2400px;margin:0;transform:translate(-50%,-50%);animation:skyspin 360s linear infinite}
+.s1,.s2,.s3{position:absolute;top:0;left:0;background:transparent;border-radius:50%}
+.s1{width:1px;height:1px;box-shadow:1326px 617px #C9D8FF,197px 296px #9DB8FF,385px 1497px #9DB8FF,237px 2078px #FFFFFF,153px 352px #C9D8FF,1712px 286px #FFFFFF,371px 2257px #C9D8FF,242px 2316px #FFFFFF,914px 2387px #FFFFFF,2363px 2398px #C9D8FF,203px 905px #FFFFFF,2280px 545px #C9D8FF,1716px 590px #9DB8FF,482px 2338px #C9D8FF,2294px 740px #FFFFFF,2382px 2339px #9DB8FF,769px 1525px #FFFFFF,2243px 257px #9DB8FF,244px 843px #C9D8FF,2177px 1751px #C9D8FF,1907px 2398px #C9D8FF,1481px 1227px #FFFFFF,736px 999px #FFFFFF,2352px 1229px #9DB8FF,2027px 1406px #9DB8FF,1838px 1179px #9DB8FF,299px 483px #9DB8FF,1712px 675px #C9D8FF,622px 2002px #C9D8FF,160px 317px #9DB8FF,2347px 1285px #C9D8FF,1434px 2034px #9DB8FF,1868px 281px #FFFFFF,1105px 1941px #9DB8FF,266px 248px #9DB8FF,1268px 2367px #9DB8FF,1825px 1165px #9DB8FF,1580px 1421px #FFFFFF,1891px 1455px #FFFFFF,479px 2022px #FFFFFF,893px 1177px #FFFFFF,1014px 1629px #C9D8FF,2033px 330px #FFFFFF,1839px 1645px #9DB8FF,1138px 560px #C9D8FF,2253px 1140px #9DB8FF,1701px 1469px #9DB8FF,1558px 945px #FFFFFF,339px 721px #FFFFFF,950px 955px #FFFFFF,1986px 746px #C9D8FF,1154px 16px #FFFFFF,1716px 2189px #C9D8FF,2319px 1305px #FFFFFF,2111px 221px #C9D8FF,2290px 1607px #C9D8FF,1634px 1614px #FFFFFF,1972px 1640px #FFFFFF,780px 275px #FFFFFF,1804px 664px #FFFFFF,1392px 215px #FFFFFF,0px 2321px #FFFFFF,2197px 415px #C9D8FF,104px 288px #FFFFFF,1541px 608px #9DB8FF,1033px 1422px #9DB8FF,1491px 1942px #FFFFFF,472px 1999px #C9D8FF,1967px 1981px #C9D8FF,351px 590px #FFFFFF,1403px 1084px #C9D8FF,661px 2114px #FFFFFF,840px 2163px #C9D8FF,600px 2224px #FFFFFF,2163px 1220px #9DB8FF,372px 1069px #9DB8FF,1502px 684px #C9D8FF,912px 2181px #9DB8FF,2059px 1350px #9DB8FF,913px 799px #FFFFFF,1641px 928px #FFFFFF,2120px 2018px #C9D8FF,118px 114px #C9D8FF,1934px 1061px #FFFFFF,1410px 1831px #9DB8FF,1431px 1493px #FFFFFF,903px 418px #FFFFFF,1925px 805px #C9D8FF,837px 1976px #9DB8FF,7px 1963px #9DB8FF,1409px 347px #9DB8FF,491px 1591px #9DB8FF,816px 1958px #FFFFFF,1777px 1361px #FFFFFF,1621px 1897px #C9D8FF,347px 650px #FFFFFF,520px 112px #FFFFFF,1906px 598px #9DB8FF,1942px 1435px #FFFFFF,2247px 2245px #FFFFFF,87px 58px #9DB8FF,420px 2156px #9DB8FF,570px 1776px #FFFFFF,864px 114px #C9D8FF,871px 1199px #9DB8FF,985px 1335px #C9D8FF,2229px 1716px #FFFFFF,249px 1449px #C9D8FF,2389px 2116px #C9D8FF,2054px 535px #9DB8FF,621px 2144px #9DB8FF,76px 1802px #FFFFFF,16px 613px #FFFFFF,579px 1939px #9DB8FF,492px 2279px #FFFFFF,1335px 2123px #9DB8FF,2275px 1976px #FFFFFF,2294px 232px #FFFFFF,783px 1134px #FFFFFF,400px 2079px #C9D8FF,2300px 114px #FFFFFF,1815px 1333px #9DB8FF,2070px 2097px #FFFFFF,1135px 1852px #9DB8FF,2184px 1958px #9DB8FF,1014px 2143px #C9D8FF,2291px 829px #C9D8FF,561px 1706px #FFFFFF,1607px 1810px #C9D8FF,297px 985px #C9D8FF,299px 871px #9DB8FF,1240px 501px #FFFFFF,1499px 585px #C9D8FF,562px 1915px #FFFFFF,385px 1631px #C9D8FF,666px 916px #FFFFFF,1767px 2111px #C9D8FF,1389px 1725px #FFFFFF,1460px 1304px #FFFFFF,1498px 79px #C9D8FF,2269px 1878px #C9D8FF,74px 1574px #C9D8FF,2119px 1210px #9DB8FF,263px 462px #FFFFFF,429px 344px #C9D8FF,1113px 162px #FFFFFF,1107px 530px #C9D8FF,1059px 1662px #FFFFFF,2197px 2108px #9DB8FF,2025px 1339px #FFFFFF,1143px 235px #9DB8FF,750px 1742px #FFFFFF,1101px 68px #9DB8FF,362px 1067px #FFFFFF,910px 272px #C9D8FF,498px 1858px #FFFFFF,1389px 2265px #C9D8FF,1097px 529px #FFFFFF,2158px 976px #FFFFFF,661px 1072px #FFFFFF,741px 826px #C9D8FF,1249px 2175px #FFFFFF,1187px 1825px #9DB8FF,728px 1108px #C9D8FF,74px 1025px #FFFFFF,62px 75px #9DB8FF,2071px 2257px #FFFFFF,2106px 1944px #FFFFFF,1831px 435px #9DB8FF,1770px 2027px #9DB8FF,1610px 2075px #C9D8FF,881px 940px #C9D8FF,813px 572px #C9D8FF,1423px 222px #FFFFFF,58px 289px #9DB8FF,1046px 1764px #FFFFFF,226px 346px #9DB8FF,1560px 2072px #9DB8FF,1154px 992px #9DB8FF,1200px 185px #C9D8FF,759px 645px #C9D8FF,1826px 14px #C9D8FF,1491px 1347px #9DB8FF,1325px 1001px #FFFFFF,1267px 892px #C9D8FF,749px 4px #C9D8FF,1563px 343px #C9D8FF,1142px 2059px #9DB8FF,823px 1016px #9DB8FF,20px 372px #C9D8FF,367px 589px #C9D8FF,170px 1613px #FFFFFF,1227px 1246px #9DB8FF,953px 346px #9DB8FF,2167px 635px #9DB8FF,1595px 1335px #9DB8FF,2024px 612px #C9D8FF,592px 179px #9DB8FF,2101px 1758px #9DB8FF,2070px 570px #9DB8FF,2065px 2328px #FFFFFF,2392px 941px #FFFFFF,127px 171px #FFFFFF,1477px 429px #C9D8FF,1848px 2287px #FFFFFF,77px 2176px #9DB8FF,1001px 2004px #C9D8FF,13px 1871px #FFFFFF,2060px 2192px #FFFFFF,2154px 270px #9DB8FF,1940px 1032px #FFFFFF,1087px 961px #9DB8FF,840px 945px #9DB8FF,1885px 2023px #C9D8FF,314px 1962px #9DB8FF,1176px 191px #9DB8FF,812px 317px #9DB8FF,603px 1358px #C9D8FF,1246px 2325px #FFFFFF,51px 1975px #FFFFFF,1989px 1100px #9DB8FF,407px 891px #9DB8FF,2005px 1191px #9DB8FF,2115px 1169px #C9D8FF,1908px 1910px #FFFFFF,2249px 816px #C9D8FF,351px 1937px #FFFFFF,1186px 1879px #FFFFFF,2075px 1840px #C9D8FF,1584px 859px #FFFFFF,305px 2381px #FFFFFF,580px 2146px #C9D8FF,1472px 543px #9DB8FF,2083px 1145px #FFFFFF,1495px 947px #C9D8FF,1991px 1614px #FFFFFF,651px 14px #C9D8FF,1846px 1660px #C9D8FF,576px 1704px #C9D8FF,1540px 1294px #FFFFFF,1357px 7px #C9D8FF,1385px 1631px #FFFFFF,801px 48px #9DB8FF,1187px 1037px #C9D8FF,266px 1609px #C9D8FF,312px 1477px #C9D8FF,1127px 197px #C9D8FF,416px 211px #9DB8FF,1169px 609px #FFFFFF,1088px 1786px #9DB8FF,1292px 777px #C9D8FF,1752px 118px #9DB8FF,1638px 2269px #9DB8FF,833px 330px #FFFFFF,1682px 1846px #9DB8FF,567px 1172px #C9D8FF,200px 2253px #FFFFFF,699px 1934px #C9D8FF,1407px 1154px #C9D8FF,1047px 1065px #C9D8FF;animation:twinkle 3.5s ease-in-out infinite alternate}
+.s2{width:2px;height:2px;box-shadow:977px 1232px #BFD3FF,2282px 1615px #FFFFFF,685px 662px #FFFFFF,851px 2050px #BFD3FF,2254px 901px #BFD3FF,1363px 1843px #BFD3FF,571px 2243px #FFFFFF,999px 371px #FFFFFF,1400px 2276px #FFFFFF,1307px 979px #BFD3FF,1058px 2333px #FFFFFF,82px 1690px #BFD3FF,1695px 2146px #FFFFFF,1543px 1106px #BFD3FF,254px 2040px #BFD3FF,2352px 1475px #FFFFFF,2061px 2167px #FFFFFF,379px 1110px #FFFFFF,1575px 1637px #BFD3FF,1768px 1278px #FFFFFF,521px 132px #BFD3FF,1938px 2006px #FFFFFF,299px 1603px #BFD3FF,1838px 1017px #FFFFFF,916px 632px #FFFFFF,2139px 446px #BFD3FF,348px 2258px #FFFFFF,5px 514px #FFFFFF,2332px 153px #BFD3FF,524px 1031px #BFD3FF,459px 407px #FFFFFF,1230px 2148px #FFFFFF,1589px 1068px #FFFFFF,4px 42px #BFD3FF,1886px 1141px #BFD3FF,992px 1946px #FFFFFF,2240px 1011px #FFFFFF,1686px 1259px #FFFFFF,89px 795px #BFD3FF,1720px 332px #BFD3FF,933px 1738px #BFD3FF,928px 2019px #FFFFFF,1384px 1722px #BFD3FF,1623px 811px #FFFFFF,1196px 2067px #FFFFFF,840px 2030px #FFFFFF,1276px 794px #FFFFFF,1905px 907px #BFD3FF,1208px 446px #BFD3FF,767px 914px #BFD3FF,1708px 231px #FFFFFF,1611px 222px #FFFFFF,96px 581px #BFD3FF,212px 246px #FFFFFF,1611px 1841px #BFD3FF,463px 325px #FFFFFF,1348px 781px #FFFFFF,2149px 1915px #FFFFFF,1277px 1550px #BFD3FF,1358px 1812px #FFFFFF,446px 11px #FFFFFF,1146px 330px #BFD3FF,1721px 506px #FFFFFF,1557px 1460px #BFD3FF,1771px 359px #FFFFFF,1939px 801px #BFD3FF,2218px 1828px #FFFFFF,1324px 1491px #BFD3FF,124px 1682px #FFFFFF,1657px 166px #BFD3FF,142px 1900px #FFFFFF,253px 1052px #FFFFFF,257px 1388px #BFD3FF,1115px 1372px #FFFFFF,1073px 1296px #BFD3FF,1218px 15px #FFFFFF,99px 957px #FFFFFF,1946px 1907px #BFD3FF,1028px 1761px #BFD3FF,543px 2033px #FFFFFF,35px 1242px #FFFFFF,967px 1342px #BFD3FF,1887px 1482px #FFFFFF,2096px 808px #BFD3FF,655px 1012px #BFD3FF,265px 138px #BFD3FF,2263px 2230px #BFD3FF,658px 1747px #FFFFFF,295px 1084px #FFFFFF,853px 394px #BFD3FF;animation:twinkle 5s ease-in-out 1s infinite alternate}
+.s3{width:3px;height:3px;box-shadow:2041px 1830px #FFFFFF,959px 544px #DCE7FF,1887px 962px #FFFFFF,1203px 1203px #DCE7FF,2321px 1096px #DCE7FF,1040px 1066px #FFFFFF,1799px 1013px #FFFFFF,1004px 964px #FFFFFF,1152px 2368px #FFFFFF,1336px 265px #DCE7FF,1030px 1007px #FFFFFF,411px 1900px #FFFFFF,419px 18px #DCE7FF,946px 1836px #DCE7FF,165px 1202px #FFFFFF,488px 206px #FFFFFF,2388px 795px #FFFFFF,1524px 2099px #FFFFFF,1839px 1064px #FFFFFF,433px 1432px #FFFFFF,153px 1510px #DCE7FF,579px 180px #FFFFFF,1044px 156px #FFFFFF,46px 1340px #DCE7FF,1522px 758px #DCE7FF,319px 833px #FFFFFF,2030px 2244px #DCE7FF,259px 1671px #FFFFFF,1619px 2253px #FFFFFF,2187px 373px #FFFFFF;filter:drop-shadow(0 0 4px #BFD3FF);animation:twinkle 2.6s ease-in-out .5s infinite alternate}
+.milky{animation:nebula 20s ease-in-out infinite}
+.shoot{position:absolute;width:180px;height:2px;border-radius:999px;background:linear-gradient(90deg,rgba(255,255,255,0),#FFFFFF);filter:drop-shadow(0 0 6px #BFD3FF);opacity:0;transform-origin:left center}
+.sh1{top:6%;left:88%;animation:shoot 9s ease-in 1s infinite}
+.sh2{top:18%;left:62%;animation:shoot 12s ease-in 4.5s infinite}
+.sh3{top:2%;left:40%;animation:shoot 10s ease-in 7s infinite}
+.sh4{top:30%;left:96%;animation:shoot 14s ease-in 10s infinite}
+.sh5{top:12%;left:75%;animation:shoot 11s ease-in 13s infinite}
+@media (prefers-reduced-motion: reduce){.sky,.s1,.s2,.s3,.milky,.shoot{animation:none}}
+.chip{transition:transform .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .2s ease;cursor:pointer}
+.chip:hover{transform:translateY(-2px);box-shadow:0 8px 20px -10px rgba(91,155,255,.7)}
+.field{transition:border-color .2s ease,box-shadow .2s ease}
+.field:focus{outline:none;border-color:#5B9BFF;box-shadow:0 0 0 4px rgba(91,155,255,.2)}
+.field::placeholder{color:#6B7896}
+.tile{transition:transform .3s ease,border-color .3s ease}.tile:hover{transform:translateY(-6px);border-color:#3D63B8}
+.cmp th,.cmp td{padding:16px 18px;text-align:left;border-bottom:1px solid #1C2742}
+.cmp tbody tr{transition:background-color .2s ease}.cmp tbody tr:hover{background-color:rgba(91,155,255,.06)}
+.cmp-d{display:block}.cmp-m{display:none}
+@media (max-width: 760px){.cmp-d{display:none}.cmp-m{display:grid}}
+@supports (animation-timeline: view()){
+.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% cover 28%}
+}
+@media (prefers-reduced-motion: reduce){
+.rise,.pop,.float,.floatsm,.pulse,.dot,.orb1,.orb2,.gridbg,.spin,.marquee,.rot,.fill,.t1,.t2,.t3,.reveal,.shine::after{animation:none}
+.card,.btn,.step{transition:none}
+}
+</style>
+</head>
+<body>
+<div style="position: relative; overflow: hidden; background: #03050C; color: #E6ECFA; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.55; min-height: 100vh">
+
+<div aria-hidden="true" style="position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; background: radial-gradient(ellipse 120% 80% at 50% 0%, #0F1D45 0%, #070C1A 55%, #03050C 100%)">
+<div class="milky" style="position: absolute; top: 10%; left: -20%; width: 140%; height: 260px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(125,160,255,0.28) 0%, rgba(110,90,255,0.14) 40%, transparent 70%); filter: blur(40px)"></div>
+<div class="orb1" style="position: absolute; top: -220px; left: -160px; width: 620px; height: 620px; border-radius: 50%; background: #5B9BFF; opacity: 0.18; filter: blur(130px)"></div>
+<div class="orb2" style="position: absolute; top: 40%; right: -200px; width: 560px; height: 560px; border-radius: 50%; background: #7C6BFF; opacity: 0.14; filter: blur(140px)"></div>
+<div class="sky"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+<div class="shoot sh1"></div><div class="shoot sh2"></div><div class="shoot sh3"></div><div class="shoot sh4"></div><div class="shoot sh5"></div>
+</div>
+
+<header class="rise" style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 24px 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
+<div style="display: flex; align-items: center; gap: 12px">
+<div class="floatsm" style="width: 40px; height: 40px; border-radius: 12px; background: #5B9BFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px rgba(91,155,255,0.5)">
+<svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#070C1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="16" height="12" rx="3"></rect><path d="M12 3v4"></path><circle cx="9" cy="13" r="1.2"></circle><circle cx="15" cy="13" r="1.2"></circle></svg>
+</div>
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.01em">Zelasis</span>
+</div>
+<nav style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<a class="link" href="#modules" style="padding: 10px 14px; text-decoration: none; color: #A6B2CC; font-size: 15px">Modules</a>
+<a class="link" href="#bots" style="padding: 10px 14px; text-decoration: none; color: #A6B2CC; font-size: 15px">Packs</a>
+<a class="link" href="#simulateur" style="padding: 10px 14px; text-decoration: none; color: #A6B2CC; font-size: 15px">Simulateur</a>
+<a class="link" href="#faq" style="padding: 10px 14px; text-decoration: none; color: #A6B2CC; font-size: 15px">FAQ</a>
+<a class="btn" href="https://discord.gg/VWMYkzDHWJ" target="_blank" rel="noopener" style="padding: 9px 16px; text-decoration: none; color: #E6ECFA; border: 1px solid #26355A; border-radius: 10px; font-weight: 600; font-size: 15px; background: rgba(12,20,40,0.6)">Rejoindre le Discord</a>
+<a class="btn shine" href="#devis" style="padding: 10px 18px; text-decoration: none; color: #070C1A; background: #5B9BFF; border-radius: 10px; font-weight: 600; font-size: 15px">Commander</a>
+</nav>
+</header>
+
+<section style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 64px 24px 56px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div style="flex: 1 1 520px; min-width: 0">
+<div class="rise d1" style="display: inline-flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B9BFF; margin-bottom: 24px; padding: 8px 14px; border: 1px solid #22345E; border-radius: 999px; background: rgba(12,20,40,0.8)">
+<span class="dot" style="width: 8px; height: 8px; border-radius: 50%; background: #5B9BFF; box-shadow: 0 0 10px #5B9BFF"></span>Commandes ouvertes · réponse sous 24 h
+</div>
+<h1 class="rise d2" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(40px, 5.6vw, 72px); line-height: 1.04; letter-spacing: -0.03em">Un bot Discord qui gère ta <span style="display: inline-block; height: 1.1em; overflow: hidden; vertical-align: bottom"><span class="rot" style="display: flex; flex-direction: column; color: #5B9BFF"><span style="height: 1.1em; line-height: 1.1em">modération.</span><span style="height: 1.1em; line-height: 1.1em">économie.</span><span style="height: 1.1em; line-height: 1.1em">tickets.</span><span style="height: 1.1em; line-height: 1.1em">communauté.</span><span style="height: 1.1em; line-height: 1.1em">modération.</span></span></span></h1>
+<p class="rise d3" style="margin: 24px 0 0; font-size: 19px; color: #A6B2CC; max-width: 560px">Modules à partir de 5 €, bots complets à partir de 15 €. Code propre, slash commands, configuration simple et support après livraison.</p>
+<div class="rise d4" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px">
+<a class="btn shine pulse" href="#bots" style="padding: 16px 26px; text-decoration: none; color: #070C1A; background: #5B9BFF; border-radius: 12px; font-weight: 600; font-size: 17px">Voir les tarifs</a>
+<a class="btn" href="https://discord.gg/VWMYkzDHWJ" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 26px; text-decoration: none; color: #E6ECFA; border: 1px solid #26355A; border-radius: 12px; font-weight: 600; font-size: 17px; background: rgba(12,20,40,0.6)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"></path></svg>Rejoindre le Discord</a>
+</div>
+</div>
+
+<div class="rise d3" style="flex: 1 1 360px; min-width: 0; max-width: 460px">
+<div class="float" style="background: rgba(13,21,41,0.92); border: 1px solid #22345E; border-radius: 20px; padding: 20px; box-shadow: 0 40px 80px -30px rgba(91,155,255,0.45)">
+<div style="display: flex; align-items: center; gap: 8px; padding-bottom: 14px; border-bottom: 1px solid #1C2742; margin-bottom: 16px">
+<span style="width: 10px; height: 10px; border-radius: 50%; background: #2A3A60"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #2A3A60"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #2A3A60"></span>
+<span style="margin-left: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8592AE"># commandes</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div class="pop m1" style="display: flex; gap: 10px; align-items: flex-start">
+<div style="width: 32px; height: 32px; border-radius: 50%; background: #2A3A60; flex: none"></div>
+<div><div style="font-size: 13px; color: #8592AE">Membre</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #5B9BFF">/ticket ouvrir</div></div>
+</div>
+<div class="pop m2" style="display: flex; gap: 10px; align-items: flex-start">
+<div style="width: 32px; height: 32px; border-radius: 10px; background: #5B9BFF; flex: none; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#070C1A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="16" height="12" rx="3"></rect><path d="M12 3v4"></path></svg></div>
+<div style="flex: 1; min-width: 0">
+<div style="font-size: 13px; color: #8592AE">Ton bot <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: #5B9BFF; color: #070C1A; padding: 1px 5px; border-radius: 4px; margin-left: 4px">BOT</span></div>
+<div style="margin-top: 6px; background: #0A1122; border-left: 3px solid #5B9BFF; border-radius: 6px; padding: 10px 12px; font-size: 14px"><div style="font-weight: 600">Ticket #0142 créé</div><div style="color: #A6B2CC; font-size: 13px">Un membre du staff arrive.</div></div>
+</div>
+</div>
+<div class="pop m3" style="display: flex; gap: 10px; align-items: flex-start">
+<div style="width: 32px; height: 32px; border-radius: 50%; background: #2A3A60; flex: none"></div>
+<div><div style="font-size: 13px; color: #8592AE">Membre</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #5B9BFF">/rank</div></div>
+</div>
+<div class="pop m4" style="display: flex; gap: 10px; align-items: flex-start">
+<div style="width: 32px; height: 32px; border-radius: 10px; background: #5B9BFF; flex: none; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#070C1A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="16" height="12" rx="3"></rect><path d="M12 3v4"></path></svg></div>
+<div style="flex: 1; min-width: 0">
+<div style="font-size: 13px; color: #8592AE">Ton bot <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: #5B9BFF; color: #070C1A; padding: 1px 5px; border-radius: 4px; margin-left: 4px">BOT</span></div>
+<div style="margin-top: 6px; background: #0A1122; border-radius: 10px; padding: 12px">
+<div style="display: flex; justify-content: space-between; font-size: 13px"><span style="font-weight: 600">Niveau 12</span><span style="color: #A6B2CC">Rang #3</span></div>
+<div style="margin-top: 8px; height: 8px; border-radius: 999px; background: #1C2742; overflow: hidden"><div class="fill" style="height: 100%; width: 78%; border-radius: 999px; background: #5B9BFF; box-shadow: 0 0 12px #5B9BFF"></div></div>
+</div>
+</div>
+</div>
+<div class="pop m5" style="display: flex; gap: 5px; align-items: center; padding-left: 42px; color: #8592AE; font-size: 13px">
+<span class="t1" style="width: 6px; height: 6px; border-radius: 50%; background: #A6B2CC"></span><span class="t2" style="width: 6px; height: 6px; border-radius: 50%; background: #A6B2CC"></span><span class="t3" style="width: 6px; height: 6px; border-radius: 50%; background: #A6B2CC"></span><span style="margin-left: 6px">Ton bot écrit…</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="rise d5" style="position: relative; z-index: 2; border-top: 1px solid #18223A; border-bottom: 1px solid #18223A; background: rgba(10,17,34,0.7); overflow: hidden; padding: 18px 0" aria-label="Fonctionnalités disponibles">
+<div class="marquee" style="display: flex; width: max-content; gap: 40px; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; color: #A6B2CC; white-space: nowrap">
+<span>Tickets</span><span style="color: #5B9BFF">◆</span><span>Modération</span><span style="color: #5B9BFF">◆</span><span>Logs</span><span style="color: #5B9BFF">◆</span><span>Niveaux &amp; XP</span><span style="color: #5B9BFF">◆</span><span>Économie</span><span style="color: #5B9BFF">◆</span><span>Giveaways</span><span style="color: #5B9BFF">◆</span><span>Auto-rôles</span><span style="color: #5B9BFF">◆</span><span>Bienvenue</span><span style="color: #5B9BFF">◆</span><span>Mini-jeux</span><span style="color: #5B9BFF">◆</span><span>Dashboard web</span><span style="color: #5B9BFF">◆</span>
+<span>Tickets</span><span style="color: #5B9BFF">◆</span><span>Modération</span><span style="color: #5B9BFF">◆</span><span>Logs</span><span style="color: #5B9BFF">◆</span><span>Niveaux &amp; XP</span><span style="color: #5B9BFF">◆</span><span>Économie</span><span style="color: #5B9BFF">◆</span><span>Giveaways</span><span style="color: #5B9BFF">◆</span><span>Auto-rôles</span><span style="color: #5B9BFF">◆</span><span>Bienvenue</span><span style="color: #5B9BFF">◆</span><span>Mini-jeux</span><span style="color: #5B9BFF">◆</span><span>Dashboard web</span><span style="color: #5B9BFF">◆</span>
+</div>
+</div>
+
+<section style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 48px 24px 0">
+<div class="reveal" style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between">
+<div><div style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600">discord.js / discord.py</div><div style="color: #8592AE; font-size: 14px">Technologies utilisées</div></div>
+<div><div style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600">2 à 10 jours</div><div style="color: #8592AE; font-size: 14px">Délai de livraison moyen</div></div>
+<div><div style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600">Support inclus</div><div style="color: #8592AE; font-size: 14px">Après chaque livraison</div></div>
+</div>
+</section>
+
+<section id="modules" style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 80px 24px 64px">
+<div class="reveal">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B9BFF">Modules</div>
+<h2 style="margin: 12px 0 8px; font-family: 'Space Grotesk', sans-serif; font-size: 44px; letter-spacing: -0.02em; line-height: 1.1">Modules à l'unité</h2>
+<p style="margin: 0 0 36px; color: #A6B2CC; max-width: 560px">À ajouter à ton bot existant ou à combiner pour en créer un nouveau.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+
+<div class="card reveal" style="background: #0D1529; border: 1px solid #1C2742; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8592AE; text-transform: uppercase; letter-spacing: 0.08em">Simple</div>
+<div style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600">Commandes de base</div>
+<div class="price" style="transform-origin: left center; font-family: 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 700; letter-spacing: -0.02em; color: #5B9BFF">5 €</div>
+<ul style="margin: 0; padding-left: 18px; color: #A6B2CC; display: flex; flex-direction: column; gap: 6px">
+<li>Embeds personnalisés</li>
+<li>Sondages, infos serveur</li>
+<li>Commandes utilitaires</li>
+</ul>
+</div>
+
+<div class="card reveal" style="background: #0D1529; border: 1px solid #1C2742; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8592AE; text-transform: uppercase; letter-spacing: 0.08em">Intermédiaire</div>
+<div style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600">Gestion de serveur</div>
+<div class="price" style="transform-origin: left center; font-family: 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 700; letter-spacing: -0.02em; color: #5B9BFF">15 €</div>
+<ul style="margin: 0; padding-left: 18px; color: #A6B2CC; display: flex; flex-direction: column; gap: 6px">
+<li>Tickets avec transcripts</li>
+<li>Modération et logs</li>
+<li>Bienvenue, auto-rôles</li>
+</ul>
+</div>
+
+<div class="card reveal" style="background: #0D1529; border: 1px solid #1C2742; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8592AE; text-transform: uppercase; letter-spacing: 0.08em">Avancé</div>
+<div style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600">Systèmes complets</div>
+<div class="price" style="transform-origin: left center; font-family: 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 700; letter-spacing: -0.02em; color: #5B9BFF">50 €</div>
+<ul style="margin: 0; padding-left: 18px; color: #A6B2CC; display: flex; flex-direction: column; gap: 6px">
+<li>Économie et boutique</li>
+<li>Niveaux / XP avec cartes de rang</li>
+<li>Giveaways, musique, mini-jeux</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<section id="simulateur" style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 64px 24px">
+<div class="reveal">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B9BFF">Simulateur</div>
+<h2 style="margin: 12px 0 8px; font-family: 'Space Grotesk', sans-serif; font-size: 44px; letter-spacing: -0.02em; line-height: 1.1">Compose ton bot</h2>
+<p style="margin: 0 0 36px; color: #A6B2CC; max-width: 560px">Clique sur les modules qui t'intéressent, le prix se calcule en direct.</p>
+</div>
+<div class="reveal" style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+<div style="flex: 999 1 560px; min-width: 0; background: rgba(13,21,41,0.85); border: 1px solid #1C2742; border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 28px">
+<div id="sim-groups" style="display: flex; flex-direction: column; gap: 28px"></div>
+<div style="padding-top: 22px; border-top: 1px solid #1C2742">
+<button type="button" class="chip" id="sim-host" aria-pressed="false" style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; padding: 12px 18px; border-radius: 12px; font-family: inherit; font-size: 15px; font-weight: 500; background: rgba(10,17,34,0.9); border: 1px solid #26355A; color: #E6ECFA">
+<span id="sim-track" style="width: 40px; height: 22px; border-radius: 999px; background: #2A3A60; position: relative; flex: none"><span id="sim-knob" style="position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF; transition: left .2s ease"></span></span>
+Ajouter l'hébergement 24/7 (10 €/mois)
+</button>
+</div>
+</div>
+
+<div style="flex: 1 1 300px; min-width: 0; background: #0E1830; border: 2px solid #5B9BFF; border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 30px 70px -30px rgba(91,155,255,0.6)">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: #8592AE">Total estimé</div>
+<div style="font-family: 'Space Grotesk', sans-serif; font-size: 60px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; color: #5B9BFF"><span id="sim-total">0 €</span></div>
+<div style="color: #A6B2CC"><span id="sim-count">Aucun module sélectionné</span></div>
+<div id="sim-hostline" hidden style="color: #E6ECFA; font-weight: 600">+ 10 € / mois d'hébergement</div>
+<div id="sim-tip" hidden style="background: rgba(91,155,255,0.12); border: 1px solid #2B4A8C; border-radius: 12px; padding: 12px 14px; font-size: 14px; color: #CFE0FF"></div>
+<a class="btn shine" href="#devis" style="margin-top: 8px; text-align: center; padding: 15px; background: #5B9BFF; border-radius: 12px; text-decoration: none; color: #070C1A; font-weight: 600">Demander ce devis</a>
+<button type="button" class="btn" id="sim-reset" style="min-height: 44px; padding: 10px; background: transparent; border: 1px solid #26355A; border-radius: 12px; color: #A6B2CC; font-family: inherit; font-size: 14px; cursor: pointer">Réinitialiser</button>
+</div>
+</div>
+</section>
+
+<section id="bots" style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 64px 24px">
+<div class="reveal">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B9BFF">Packs</div>
+<h2 style="margin: 12px 0 8px; font-family: 'Space Grotesk', sans-serif; font-size: 44px; letter-spacing: -0.02em; line-height: 1.1">Choisis ta formule</h2>
+<p style="margin: 0 0 36px; color: #A6B2CC; max-width: 560px">Prix de départ. Le tarif final dépend du cahier des charges, devis gratuit avant tout paiement.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: stretch">
+
+<div class="card reveal" style="background: #0D1529; border: 1px solid #1C2742; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<div>
+<div style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600">Starter</div>
+<div style="color: #8592AE; font-size: 15px; margin-top: 4px">Bot prêt à l'emploi, licence</div>
+</div>
+<div style="display: flex; align-items: baseline; gap: 8px"><span class="price" style="display: inline-block; transform-origin: left center; font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700; letter-spacing: -0.03em">15 €</span><span style="color: #8592AE">dès</span></div>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; flex: 1">
+<li style="display: flex; gap: 10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M5 12l5 5L20 7"></path></svg>Modération + logs</li>
+<li style="display: flex; gap: 10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M5 12l5 5L20 7"></path></svg>Configuration par fichier</li>
+<li style="display: flex; gap: 10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M5 12l5 5L20 7"></path></svg>Guide d'installation</li>
+</ul>
+<a class="btn" href="#contact" style="text-align: center; padding: 14px; border: 1px solid #26355A; border-radius: 12px; text-decoration: none; color: #E6ECFA; font-weight: 600">Choisir Starter</a>
+</div>
+
+<div class="card reveal" style="position: relative; border-radius: 22px; padding: 2px; display: flex">
+<div class="spin" aria-hidden="true" style="position: absolute; inset: 0; border-radius: 22px; background: conic-gradient(from var(--a), #5B9BFF, #0F1A33 25%, #7DD3FC 50%, #0F1A33 75%, #5B9BFF)"></div>
+<div class="spin" aria-hidden="true" style="position: absolute; inset: 0; border-radius: 22px; background: conic-gradient(from var(--a), #5B9BFF, transparent 25%, #7DD3FC 50%, transparent 75%, #5B9BFF); filter: blur(22px); opacity: 0.55"></div>
+<div style="position: relative; flex: 1; background: #0E1830; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap">
+<div>
+<div style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600">Sur mesure</div>
+<div style="color: #8592AE; font-size: 15px; margin-top: 4px">Bot dédié à ton serveur</div>
+</div>
+<span class="pulse" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; background: #5B9BFF; color: #070C1A; padding: 6px 10px; border-radius: 999px">Populaire</span>
+</div>
+<div style="display: flex; align-items: baseline; gap: 8px"><span class="price" style="display: inline-block; transform-origin: left center; font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700; letter-spacing: -0.03em; color: #5B9BFF">60 €</span><span style="color: #8592AE">dès</span></div>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; flex: 1">
+<li style="display: flex; gap: 10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M5 12l5 5L20 7"></path></svg>4 modules simples ou intermédiaires (+30 € par module avancé)</li>
+<li style="display: flex; gap: 10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M5 12l5 5L20 7"></path></svg>Nom, avatar et couleurs à ton image</li>
+<li style="display: flex; gap: 10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M5 12l5 5L20 7"></path></svg>Base de données incluse</li>
+<li style="display: flex; gap: 10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M5 12l5 5L20 7"></path></svg>2 retouches + 30 jours de support</li>
+</ul>
+<a class="btn shine" href="#contact" style="text-align: center; padding: 15px; background: #5B9BFF; border-radius: 12px; text-decoration: none; color: #070C1A; font-weight: 600">Demander un devis</a>
+</div>
+</div>
+
+<div class="card reveal" style="background: #0D1529; border: 1px solid #1C2742; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<div>
+<div style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600">Premium</div>
+<div style="color: #8592AE; font-size: 15px; margin-top: 4px">Projet complexe, multi-serveur</div>
+</div>
+<div style="display: flex; align-items: baseline; gap: 8px"><span class="price" style="display: inline-block; transform-origin: left center; font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700; letter-spacing: -0.03em">350 €</span><span style="color: #8592AE">dès</span></div>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; flex: 1">
+<li style="display: flex; gap: 10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M5 12l5 5L20 7"></path></svg>Modules illimités</li>
+<li style="display: flex; gap: 10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M5 12l5 5L20 7"></path></svg>Dashboard web de configuration</li>
+<li style="display: flex; gap: 10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M5 12l5 5L20 7"></path></svg>Intégrations API externes</li>
+<li style="display: flex; gap: 10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M5 12l5 5L20 7"></path></svg>Support prioritaire 90 jours</li>
+</ul>
+<a class="btn" href="#contact" style="text-align: center; padding: 14px; border: 1px solid #26355A; border-radius: 12px; text-decoration: none; color: #E6ECFA; font-weight: 600">Discuter du projet</a>
+</div>
+
+</div>
+
+<div class="card reveal" style="margin-top: 20px; background: #0D1529; border: 1px solid #1C2742; border-radius: 22px; padding: 28px 32px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between">
+<div style="display: flex; gap: 18px; align-items: center; max-width: 660px">
+<div class="floatsm" style="width: 52px; height: 52px; flex: none; border-radius: 14px; background: #13224A; display: flex; align-items: center; justify-content: center">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"></rect><rect x="3" y="13" width="18" height="7" rx="2"></rect><path d="M7 7.5h.01M7 16.5h.01"></path></svg>
+</div>
+<div>
+<div style="display: flex; align-items: center; gap: 10px; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600">Hébergement &amp; maintenance <span class="dot" style="width: 8px; height: 8px; border-radius: 50%; background: #4ADE80; box-shadow: 0 0 10px #4ADE80"></span></div>
+<div style="color: #A6B2CC; margin-top: 4px">Ton bot en ligne 24/7, mises à jour Discord suivies, corrections incluses.</div>
+</div>
+</div>
+<div style="display: flex; align-items: baseline; gap: 8px"><span class="price" style="display: inline-block; font-family: 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 700; color: #5B9BFF">10 €</span><span style="color: #8592AE">/ mois</span></div>
+</div>
+</section>
+
+<section id="comparatif" style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 64px 24px">
+<div class="reveal">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B9BFF">Comparatif</div>
+<h2 style="margin: 12px 0 28px; font-family: 'Space Grotesk', sans-serif; font-size: 44px; letter-spacing: -0.02em; line-height: 1.1">Quel pack pour toi ?</h2>
+</div>
+<div class="cmp-m" id="cmp-cards" style="grid-template-columns: minmax(0, 1fr); gap: 16px">
+<!-- cartes du comparatif (mobile) générées par le script -->
+</div>
+<div class="reveal cmp-d" style="overflow-x: auto; background: rgba(13,21,41,0.85); border: 1px solid #1C2742; border-radius: 22px">
+<table class="cmp" style="width: 100%; min-width: 640px; border-collapse: collapse; font-size: 15px">
+<thead>
+<tr style="font-family: 'Space Grotesk', sans-serif; font-size: 18px">
+<th scope="col" style="color: #8592AE; font-weight: 500; font-size: 14px">Inclus</th>
+<th scope="col">Starter</th>
+<th scope="col" style="color: #5B9BFF; background: rgba(91,155,255,0.08)">Sur mesure</th>
+<th scope="col">Premium</th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row" style="font-weight: 500; color: #A6B2CC">Prix de départ</th><td style="font-weight: 700">15 €</td><td style="font-weight: 700; color: #5B9BFF; background: rgba(91,155,255,0.08)">60 €</td><td style="font-weight: 700">350 €</td></tr>
+<tr><th scope="row" style="font-weight: 500; color: #A6B2CC">Modules</th><td>2</td><td style="background: rgba(91,155,255,0.08)">Jusqu'à 4 (+30 € / avancé)</td><td>Illimités</td></tr>
+<tr><th scope="row" style="font-weight: 500; color: #A6B2CC">Personnalisation (nom, avatar, couleurs)</th><td><span style="color: #56627E">—</span></td><td style="background: rgba(91,155,255,0.08)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Inclus"><path d="M5 12l5 5L20 7"></path></svg></td><td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Inclus"><path d="M5 12l5 5L20 7"></path></svg></td></tr>
+<tr><th scope="row" style="font-weight: 500; color: #A6B2CC">Code source fourni</th><td><span style="color: #56627E">—</span></td><td style="background: rgba(91,155,255,0.08)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Inclus"><path d="M5 12l5 5L20 7"></path></svg></td><td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Inclus"><path d="M5 12l5 5L20 7"></path></svg></td></tr>
+<tr><th scope="row" style="font-weight: 500; color: #A6B2CC">Base de données</th><td><span style="color: #56627E">—</span></td><td style="background: rgba(91,155,255,0.08)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Inclus"><path d="M5 12l5 5L20 7"></path></svg></td><td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Inclus"><path d="M5 12l5 5L20 7"></path></svg></td></tr>
+<tr><th scope="row" style="font-weight: 500; color: #A6B2CC">Dashboard web</th><td><span style="color: #56627E">—</span></td><td style="background: rgba(91,155,255,0.08)"><span style="color: #56627E">—</span></td><td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Inclus"><path d="M5 12l5 5L20 7"></path></svg></td></tr>
+<tr><th scope="row" style="font-weight: 500; color: #A6B2CC">Intégrations API externes</th><td><span style="color: #56627E">—</span></td><td style="background: rgba(91,155,255,0.08)"><span style="color: #56627E">—</span></td><td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Inclus"><path d="M5 12l5 5L20 7"></path></svg></td></tr>
+<tr><th scope="row" style="font-weight: 500; color: #A6B2CC">Retouches</th><td><span style="color: #56627E">—</span></td><td style="background: rgba(91,155,255,0.08)">2</td><td>Prioritaires</td></tr>
+<tr><th scope="row" style="font-weight: 500; color: #A6B2CC; border-bottom: none">Support</th><td style="border-bottom: none">Guide d'installation</td><td style="background: rgba(91,155,255,0.08); border-bottom: none">30 jours</td><td style="border-bottom: none">90 jours prioritaire</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="demos" style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 64px 24px">
+<div class="reveal">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B9BFF">Aperçus</div>
+<h2 style="margin: 12px 0 8px; font-family: 'Space Grotesk', sans-serif; font-size: 44px; letter-spacing: -0.02em; line-height: 1.1">Ce que ton bot peut faire</h2>
+<p style="margin: 0 0 36px; color: #A6B2CC; max-width: 560px">Quelques exemples de modules tels qu'ils apparaissent sur ton serveur.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+
+<div class="card reveal" style="background: #0D1529; border: 1px solid #1C2742; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 16px">
+<div style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Panneau de tickets</div>
+<div style="background: #0A1122; border-left: 4px solid #5B9BFF; border-radius: 10px; padding: 16px">
+<div style="font-weight: 600; font-size: 16px">Besoin d'aide ?</div>
+<div style="color: #A6B2CC; font-size: 14px; margin-top: 4px">Choisis une catégorie, un membre du staff te répond.</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px">
+<span style="padding: 8px 12px; border-radius: 8px; background: #5B9BFF; color: #070C1A; font-size: 13px; font-weight: 600">Support</span>
+<span style="padding: 8px 12px; border-radius: 8px; background: #1C2742; font-size: 13px; font-weight: 600">Partenariat</span>
+<span style="padding: 8px 12px; border-radius: 8px; background: #1C2742; font-size: 13px; font-weight: 600">Signalement</span>
+</div>
+</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8592AE">Module intermédiaire · 15 €</div>
+</div>
+
+<div class="card reveal" style="background: #0D1529; border: 1px solid #1C2742; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 16px">
+<div style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Logs de modération</div>
+<div style="background: #0A1122; border-radius: 10px; padding: 8px 14px; font-size: 14px">
+<div style="display: flex; gap: 10px; align-items: center; padding: 10px 0; border-bottom: 1px solid #18223A"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F87171; flex: none"></span><span style="flex: 1">Membre banni · spam</span><span style="color: #8592AE; font-size: 12px">21:04</span></div>
+<div style="display: flex; gap: 10px; align-items: center; padding: 10px 0; border-bottom: 1px solid #18223A"><span style="width: 8px; height: 8px; border-radius: 50%; background: #FBBF24; flex: none"></span><span style="flex: 1">Message supprimé · lien</span><span style="color: #8592AE; font-size: 12px">21:02</span></div>
+<div style="display: flex; gap: 10px; align-items: center; padding: 10px 0"><span style="width: 8px; height: 8px; border-radius: 50%; background: #5B9BFF; flex: none"></span><span style="flex: 1">Nouveau membre vérifié</span><span style="color: #8592AE; font-size: 12px">20:58</span></div>
+</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8592AE">Module intermédiaire · 15 €</div>
+</div>
+
+<div class="card reveal" style="background: #0D1529; border: 1px solid #1C2742; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 16px">
+<div style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Économie &amp; boutique</div>
+<div style="background: #0A1122; border-radius: 10px; padding: 16px">
+<div style="color: #8592AE; font-size: 13px">Ton solde</div>
+<div style="font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 700; color: #5B9BFF">12 450 coins</div>
+<div style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px; font-size: 14px">
+<div style="display: flex; justify-content: space-between; padding: 8px 10px; background: #111B33; border-radius: 8px"><span>Rôle VIP</span><span style="color: #A6B2CC">5 000</span></div>
+<div style="display: flex; justify-content: space-between; padding: 8px 10px; background: #111B33; border-radius: 8px"><span>Couleur de pseudo</span><span style="color: #A6B2CC">2 000</span></div>
+</div>
+</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8592AE">Module avancé · 50 €</div>
+</div>
+
+</div>
+</section>
+
+<section id="garanties" style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 32px 24px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+<div class="tile reveal" style="display: flex; gap: 14px; align-items: flex-start; padding: 22px; border-radius: 18px; background: rgba(13,21,41,0.85); border: 1px solid #1C2742">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M8.5 12l2.5 2.5L16 9.5"></path></svg>
+<div><div style="font-weight: 600; font-size: 17px">Satisfait ou corrigé</div><div style="color: #A6B2CC; font-size: 14px; margin-top: 4px">Je corrige jusqu'à ce que le bot fasse ce qui était prévu au devis.</div></div>
+</div>
+<div class="tile reveal" style="display: flex; gap: 14px; align-items: flex-start; padding: 22px; border-radius: 18px; background: rgba(13,21,41,0.85); border: 1px solid #1C2742">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><rect x="3" y="6" width="18" height="13" rx="2"></rect><path d="M3 10h18M7 15h4"></path></svg>
+<div><div style="font-weight: 600; font-size: 17px">Paiement sécurisé</div><div style="color: #A6B2CC; font-size: 14px; margin-top: 4px">PayPal ou virement bancaire, acompte puis solde à la livraison.</div></div>
+</div>
+<div class="tile reveal" style="display: flex; gap: 14px; align-items: flex-start; padding: 22px; border-radius: 18px; background: rgba(13,21,41,0.85); border: 1px solid #1C2742">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3"></path></svg>
+<div><div style="font-weight: 600; font-size: 17px">Testé avant livraison</div><div style="color: #A6B2CC; font-size: 14px; margin-top: 4px">Chaque commande est vérifiée sur un serveur de démo.</div></div>
+</div>
+<div class="tile reveal" style="display: flex; gap: 14px; align-items: flex-start; padding: 22px; border-radius: 18px; background: rgba(13,21,41,0.85); border: 1px solid #1C2742">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5B9BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M4 5h16v11H8l-4 4z"></path><path d="M8 10h8"></path></svg>
+<div><div style="font-weight: 600; font-size: 17px">Devis gratuit</div><div style="color: #A6B2CC; font-size: 14px; margin-top: 4px">Sans engagement, réponse sous 24 h.</div></div>
+</div>
+</div>
+</section>
+
+<section style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 64px 24px">
+<div class="reveal">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B9BFF">Process</div>
+<h2 style="margin: 12px 0 36px; font-family: 'Space Grotesk', sans-serif; font-size: 44px; letter-spacing: -0.02em; line-height: 1.1">Comment ça se passe</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px">
+<div class="step reveal" style="padding: 24px; border-radius: 18px; background: rgba(13,21,41,0.7); border: 1px solid #1C2742"><div style="width: 48px; height: 48px; border-radius: 14px; background: #5B9BFF; color: #070C1A; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700">1</div><div style="font-weight: 600; font-size: 18px; margin-top: 16px">Tu expliques ton besoin</div><div style="color: #A6B2CC; margin-top: 6px">Fonctionnalités, serveur, délai souhaité.</div></div>
+<div class="step reveal" style="padding: 24px; border-radius: 18px; background: rgba(13,21,41,0.7); border: 1px solid #1C2742"><div style="width: 48px; height: 48px; border-radius: 14px; background: #5B9BFF; color: #070C1A; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700">2</div><div style="font-weight: 600; font-size: 18px; margin-top: 16px">Devis gratuit</div><div style="color: #A6B2CC; margin-top: 6px">Prix fixe et délai clair, sans surprise.</div></div>
+<div class="step reveal" style="padding: 24px; border-radius: 18px; background: rgba(13,21,41,0.7); border: 1px solid #1C2742"><div style="width: 48px; height: 48px; border-radius: 14px; background: #5B9BFF; color: #070C1A; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700">3</div><div style="font-weight: 600; font-size: 18px; margin-top: 16px">Développement</div><div style="color: #A6B2CC; margin-top: 6px">Acompte au lancement, tests sur un serveur de démo.</div></div>
+<div class="step reveal" style="padding: 24px; border-radius: 18px; background: rgba(13,21,41,0.7); border: 1px solid #1C2742"><div style="width: 48px; height: 48px; border-radius: 14px; background: #5B9BFF; color: #070C1A; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700">4</div><div style="font-weight: 600; font-size: 18px; margin-top: 16px">Livraison</div><div style="color: #A6B2CC; margin-top: 6px">Installation, guide et support inclus.</div></div>
+</div>
+</section>
+
+
+<section id="faq" style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 64px 24px">
+<div class="reveal">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B9BFF">FAQ</div>
+<h2 style="margin: 12px 0 28px; font-family: 'Space Grotesk', sans-serif; font-size: 44px; letter-spacing: -0.02em; line-height: 1.1">Questions fréquentes</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 0 48px">
+<div class="reveal" style="padding: 22px 0; border-top: 1px solid #1C2742"><div style="font-weight: 600; font-size: 18px">Est-ce que je reçois le code source ?</div><div style="color: #A6B2CC; margin-top: 6px">Oui pour le sur-mesure et le Premium. Les bots Starter sont vendus en licence d'utilisation.</div></div>
+<div class="reveal" style="padding: 22px 0; border-top: 1px solid #1C2742"><div style="font-weight: 600; font-size: 18px">Quels moyens de paiement ?</div><div style="color: #A6B2CC; margin-top: 6px">Virement bancaire ou PayPal. Acompte au lancement, solde à la livraison.</div></div>
+<div class="reveal" style="padding: 22px 0; border-top: 1px solid #1C2742"><div style="font-weight: 600; font-size: 18px">Et si je veux des modifications plus tard ?</div><div style="color: #A6B2CC; margin-top: 6px">Les petites corrections sont incluses pendant le support. Les nouvelles fonctionnalités sont chiffrées à part.</div></div>
+<div class="reveal" style="padding: 22px 0; border-top: 1px solid #1C2742"><div style="font-weight: 600; font-size: 18px">Je dois héberger le bot moi-même ?</div><div style="color: #A6B2CC; margin-top: 6px">Comme tu préfères : je fournis un guide, ou je m'en occupe avec l'option hébergement à 10 €/mois.</div></div>
+</div>
+</section>
+
+<section id="devis" style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 64px 24px 24px">
+<div class="reveal">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B9BFF">Devis</div>
+<h2 style="margin: 12px 0 8px; font-family: 'Space Grotesk', sans-serif; font-size: 44px; letter-spacing: -0.02em; line-height: 1.1">Demande ton devis gratuit</h2>
+<p style="margin: 0 0 32px; color: #A6B2CC; max-width: 560px">Remplis le formulaire, ta demande s'ouvre dans ta messagerie prête à m'être envoyée.</p>
+</div>
+<div class="reveal" style="background: rgba(13,21,41,0.9); border: 1px solid #1C2742; border-radius: 24px; padding: clamp(22px, 4vw, 40px); display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="f-name" style="font-size: 14px; font-weight: 600; color: #A6B2CC">Ton nom ou pseudo *</label>
+<input id="f-name" class="field" type="text" placeholder="Ex. Alex" style="min-height: 48px; padding: 12px 14px; border-radius: 12px; border: 1px solid #26355A; background: #0A1122; color: #E6ECFA; font-family: inherit; font-size: 16px">
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="f-discord" style="font-size: 14px; font-weight: 600; color: #A6B2CC">Ton pseudo Discord</label>
+<input id="f-discord" class="field" type="text" placeholder="Pour te recontacter" style="min-height: 48px; padding: 12px 14px; border-radius: 12px; border: 1px solid #26355A; background: #0A1122; color: #E6ECFA; font-family: inherit; font-size: 16px">
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="f-budget" style="font-size: 14px; font-weight: 600; color: #A6B2CC">Budget</label>
+<select id="f-budget" class="field" style="min-height: 48px; padding: 12px 14px; border-radius: 12px; border: 1px solid #26355A; background: #0A1122; color: #E6ECFA; font-family: inherit; font-size: 16px">
+<option value="">Choisir…</option>
+<option value="Moins de 20 €">Moins de 20 €</option>
+<option value="20 – 60 €">20 – 60 €</option>
+<option value="60 – 150 €">60 – 150 €</option>
+<option value="150 – 350 €">150 – 350 €</option>
+<option value="Plus de 350 €">Plus de 350 €</option>
+</select>
+</div>
+<div style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 8px">
+<label for="f-need" style="font-size: 14px; font-weight: 600; color: #A6B2CC">Décris ton besoin *</label>
+<textarea id="f-need" class="field" rows="5" placeholder="Fonctionnalités voulues, taille du serveur, délai…" style="padding: 12px 14px; border-radius: 12px; border: 1px solid #26355A; background: #0A1122; color: #E6ECFA; font-family: inherit; font-size: 16px; resize: vertical"></textarea>
+</div>
+<div style="grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; padding-top: 6px">
+<div style="font-size: 14px; color: #A6B2CC">Sélection du simulateur : <span style="color: #E6ECFA; font-weight: 600"><span id="sel-label">aucun module</span></span></div>
+<a id="send-btn" class="btn shine pulse" href="#devis" hidden style="padding: 16px 26px; background: #5B9BFF; color: #070C1A; border-radius: 12px; text-decoration: none; font-weight: 600">Envoyer ma demande</a>
+<button id="send-off" type="button" disabled style="min-height: 52px; padding: 14px 24px; background: #1C2742; color: #8592AE; border: none; border-radius: 12px; font-family: inherit; font-size: 16px; font-weight: 600">Remplis nom et besoin</button>
+</div>
+</div>
+</section>
+
+<section id="contact" style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 48px 24px 96px">
+<div class="reveal shine" style="position: relative; overflow: hidden; background: #5B9BFF; color: #070C1A; border-radius: 28px; padding: clamp(32px, 5vw, 64px); box-shadow: 0 40px 100px -30px rgba(91,155,255,0.7)">
+<div class="orb2" aria-hidden="true" style="position: absolute; right: -120px; top: -120px; width: 360px; height: 360px; border-radius: 50%; background: #FFFFFF; opacity: 0.25; filter: blur(70px); pointer-events: none"></div>
+<div style="position: relative; display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between">
+<div style="max-width: 600px">
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 4.4vw, 54px); letter-spacing: -0.02em; line-height: 1.02">Ton bot peut tourner d'ici la semaine prochaine.</h2>
+<p style="margin: 14px 0 0; font-size: 18px; color: #0B1630">Envoie-moi ton idée, je te réponds sous 24 h avec un devis gratuit.</p>
+<p style="margin: 16px 0 0; font-size: 15px; color: #0B1630; font-weight: 600">Paiement : virement ou PayPal</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<a class="btn shine" href="https://discord.gg/VWMYkzDHWJ" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 16px 26px; background: #070C1A; color: #FFFFFF; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 17px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"></path></svg>Rejoindre le serveur Discord</a>
+<button type="button" class="btn" id="copy-discord" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 16px 26px; background: transparent; color: #070C1A; border: 1.5px solid #070C1A; border-radius: 14px; font-family: inherit; font-weight: 600; font-size: 17px; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15V5a2 2 0 0 1 2-2h10"></path></svg><span id="copy-label">Discord : _zelais__</span></button>
+<a class="btn" href="mailto:zelasis.pro@gmail.com" style="padding: 18px 26px; border: 1.5px solid #070C1A; color: #070C1A; border-radius: 14px; text-decoration: none; font-weight: 600; text-align: center; font-size: 17px">zelasis.pro@gmail.com</a>
+</div>
+</div>
+</div>
+<footer style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; color: #8592AE; font-size: 14px">
+<span>© 2026 Zelasis</span>
+<span>Projet indépendant, non affilié à Discord Inc.</span>
+</footer>
+</section>
+
+</div>
+<script>
+(function () {
+  var ACCENT = '#5B9BFF';
+  var GROUPS = [
+    { label: 'Simple', price: '5 €', items: [
+      { id: 'embeds', name: 'Embeds personnalisés', price: 5 }, { id: 'sondages', name: 'Sondages', price: 5 },
+      { id: 'infos', name: 'Infos serveur', price: 5 }, { id: 'utils', name: 'Commandes utilitaires', price: 5 } ] },
+    { label: 'Intermédiaire', price: '15 €', items: [
+      { id: 'tickets', name: 'Tickets', price: 15 }, { id: 'modo', name: 'Modération', price: 15 }, { id: 'logs', name: 'Logs', price: 15 },
+      { id: 'welcome', name: 'Bienvenue', price: 15 }, { id: 'roles', name: 'Auto-rôles', price: 15 } ] },
+    { label: 'Avancé', price: '50 €', items: [
+      { id: 'eco', name: 'Économie & boutique', price: 50 }, { id: 'xp', name: 'Niveaux / XP', price: 50 }, { id: 'give', name: 'Giveaways', price: 50 },
+      { id: 'music', name: 'Musique', price: 50 }, { id: 'games', name: 'Mini-jeux', price: 50 } ] }
+  ];
+  var CHECK = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>';
+  var sel = {}, host = false;
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); };
+
+  // Simulateur : construction des boutons
+  var groupsEl = $('sim-groups');
+  GROUPS.forEach(function (g) {
+    var wrap = document.createElement('div');
+    wrap.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px"><span style="font-family:\'Space Grotesk\',sans-serif;font-size:20px;font-weight:600">' + g.label + '</span><span style="font-family:\'IBM Plex Mono\',monospace;font-size:13px;color:#8592AE">' + g.price + ' / module</span></div><div style="display:flex;flex-wrap:wrap;gap:10px"></div>';
+    var row = wrap.lastChild;
+    g.items.forEach(function (m) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'chip'; b.dataset.id = m.id;
+      b.style.cssText = 'display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 16px;border-radius:12px;font-family:inherit;font-size:15px;font-weight:500';
+      b.addEventListener('click', function () { sel[m.id] = !sel[m.id]; render(); });
+      row.appendChild(b);
+    });
+    groupsEl.appendChild(wrap);
+  });
+  $('sim-host').addEventListener('click', function () { host = !host; render(); });
+  $('sim-reset').addEventListener('click', function () { sel = {}; host = false; render(); });
+
+  function render() {
+    var total = 0, count = 0, names = [], adv = 0;
+    GROUPS.forEach(function (g, gi) { g.items.forEach(function (m) {
+      if (sel[m.id]) { total += m.price; count++; names.push(m.name); if (gi === 2) adv++; }
+    }); });
+    document.querySelectorAll('#sim-groups button').forEach(function (b) {
+      var m; GROUPS.forEach(function (g) { g.items.forEach(function (x) { if (x.id === b.dataset.id) m = x; }); });
+      var on = !!sel[m.id];
+      b.setAttribute('aria-pressed', on);
+      b.style.background = on ? ACCENT : 'rgba(10,17,34,0.9)';
+      b.style.border = '1px solid ' + (on ? ACCENT : '#26355A');
+      b.style.color = on ? '#070C1A' : '#E6ECFA';
+      b.innerHTML = (on ? CHECK : '') + esc(m.name);
+    });
+    var hb = $('sim-host');
+    hb.setAttribute('aria-pressed', host);
+    hb.style.background = host ? 'rgba(91,155,255,0.14)' : 'rgba(10,17,34,0.9)';
+    hb.style.borderColor = host ? ACCENT : '#26355A';
+    $('sim-track').style.background = host ? ACCENT : '#2A3A60';
+    $('sim-knob').style.left = host ? '21px' : '3px';
+    $('sim-total').textContent = total + ' €';
+    $('sim-count').textContent = count === 0 ? 'Aucun module sélectionné' : count + ' module' + (count > 1 ? 's' : '') + ' sélectionné' + (count > 1 ? 's' : '');
+    $('sim-hostline').hidden = !host;
+    var tip = '', packPrice = 60 + adv * 30;
+    if (count > 4 && total > 350) tip = 'Le pack Premium (dès 350 €, modules illimités) te reviendrait moins cher.';
+    else if (count >= 2 && count <= 4 && total >= packPrice) tip = 'Le pack Sur mesure te reviendrait à ' + packPrice + ' €' + (adv ? ' (60 € + 30 € par module avancé)' : '') + (total > packPrice ? ', soit ' + (total - packPrice) + ' € d’économie.' : ', avec personnalisation et support en plus.');
+    $('sim-tip').textContent = tip; $('sim-tip').hidden = !tip;
+    $('sel-label').textContent = count === 0 ? 'aucun module' : count + ' module' + (count > 1 ? 's' : '') + ' · ' + total + ' €' + (host ? ' + hébergement' : '');
+    updateForm(names, total);
+  }
+
+  // Formulaire de devis → mail prérempli
+  var last = { names: [], total: 0 };
+  function updateForm(names, total) {
+    if (names) last = { names: names, total: total };
+    var f = { name: $('f-name').value.trim(), discord: $('f-discord').value.trim(), budget: $('f-budget').value, need: $('f-need').value.trim() };
+    var ok = f.name !== '' && f.need !== '';
+    var body = 'Bonjour Zelasis,\n\nNom : ' + f.name + '\nDiscord : ' + (f.discord || '-') + '\nBudget : ' + (f.budget || '-') +
+      '\n\nModules choisis : ' + (last.names.length ? last.names.join(', ') : 'aucun') + '\nEstimation : ' + last.total + ' €' + (host ? ' + hébergement 10 €/mois' : '') +
+      '\n\nMon besoin :\n' + f.need;
+    $('send-btn').href = 'mailto:zelasis.pro@gmail.com?subject=' + encodeURIComponent('Demande de devis - ' + f.name) + '&body=' + encodeURIComponent(body);
+    $('send-btn').hidden = !ok; $('send-off').hidden = ok;
+  }
+  ['f-name', 'f-discord', 'f-budget', 'f-need'].forEach(function (id) {
+    $(id).addEventListener('input', function () { updateForm(); });
+    $(id).addEventListener('change', function () { updateForm(); });
+  });
+
+  // Comparatif en cartes (mobile)
+  var LABELS = ['Modules', 'Personnalisation', 'Code source fourni', 'Base de données', 'Dashboard web', 'Intégrations API', 'Retouches', 'Support'];
+  var PACKS = [
+    { name: 'Starter', price: '15 €', hot: false, vals: ['2', '—', '—', '—', '—', '—', '—', 'Guide d’installation'] },
+    { name: 'Sur mesure', price: '60 €', hot: true, vals: ['Jusqu’à 4 (+30 € / avancé)', '✓', '✓', '✓', '—', '—', '2', '30 jours'] },
+    { name: 'Premium', price: '350 €', hot: false, vals: ['Illimités', '✓', '✓', '✓', '✓', '✓', 'Prioritaires', '90 jours prioritaire'] }
+  ];
+  $('cmp-cards').innerHTML = PACKS.map(function (p) {
+    return '<div style="background:' + (p.hot ? '#0E1830' : 'rgba(13,21,41,0.9)') + ';border:' + (p.hot ? '2px solid ' + ACCENT : '1px solid #1C2742') + ';border-radius:20px;padding:22px">' +
+      '<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px"><span style="font-family:\'Space Grotesk\',sans-serif;font-size:22px;font-weight:700">' + p.name + '</span><span style="font-family:\'Space Grotesk\',sans-serif;font-size:26px;font-weight:700;color:' + (p.hot ? ACCENT : '#E6ECFA') + '">dès ' + p.price + '</span></div>' +
+      LABELS.map(function (l, i) { var v = p.vals[i];
+        return '<div style="display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-top:1px solid #1C2742;font-size:15px"><span style="color:#A6B2CC">' + l + '</span><span style="font-weight:600;text-align:right;color:' + (v === '—' ? '#56627E' : v === '✓' ? ACCENT : '#E6ECFA') + '">' + v + '</span></div>';
+      }).join('') + '</div>';
+  }).join('');
+
+  // Copier le pseudo Discord
+  $('copy-discord').addEventListener('click', function () {
+    try { navigator.clipboard.writeText('_zelais__'); } catch (e) {}
+    $('copy-label').textContent = 'Pseudo copié !';
+    setTimeout(function () { $('copy-label').textContent = 'Discord : _zelais__'; }, 2000);
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
