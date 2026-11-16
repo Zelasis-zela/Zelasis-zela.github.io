@@ -1,12 +1,13 @@
-
 const CONFIG = {
   brand: "Zelasis",
   email: "zelasis.pro@gmail.com",          
-  discordInvite: "https://discord.gg/VWMYkzDHWJ",
+  discordInvite: "https://discord.gg/TON-INVITE",
   discordUser: "_zelasis__",
   hostingPrice: 10,                        
 
   apiUrl: "",
+ 
+  webhookUrl: "",
   modules: [
     { level: "Simple", price: 5,
       items: ["Embeds personnalisés", "Sondages", "Suggestions", "Infos serveur", "Commandes utilitaires"] },
@@ -145,7 +146,7 @@ form.addEventListener("submit", async e => {
     website: form.website.value, 
   };
 
-  if (!CONFIG.apiUrl) {
+  if (!CONFIG.apiUrl && !CONFIG.webhookUrl) {
     const body = [
       `Nom : ${payload.name}`, `Discord : ${payload.discord || "—"}`, `Email : ${payload.email || "—"}`,
       `Formule : ${payload.pack || "Pas encore décidé"}`, `Budget : ${payload.budget || "—"}`, "",
@@ -155,7 +156,6 @@ form.addEventListener("submit", async e => {
     return setMsg("ok", "Ta messagerie s'ouvre, il ne reste plus qu'à envoyer !");
   }
 
-  // ----- Envoi au bot Discord -----
   if (!payload.discord && !payload.email) {
     form.discord.classList.add("invalid"); form.email.classList.add("invalid");
     return setMsg("err", "Indique ton pseudo Discord ou ton email pour recevoir ma réponse.");
@@ -163,14 +163,36 @@ form.addEventListener("submit", async e => {
   submitBtn.disabled = true;
   setMsg("", "Envoi en cours…");
   try {
-    const res = await fetch(`${CONFIG.apiUrl}/api/devis`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok || !data.ok) throw new Error(data.error || "Envoi impossible");
+    let data;
+    if (CONFIG.webhookUrl) {
+      if (payload.website) { data = { ok: true, linked: true }; } else {
+        const res = await fetch(`${CONFIG.webhookUrl}?wait=true`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            username: `${CONFIG.brand} · Site`,
+            allowed_mentions: { parse: [] },
+            embeds: [{ title: "devis-site", description: "```json" + String.fromCharCode(10) + JSON.stringify(payload) + String.fromCharCode(10) + "```" }],
+          }),
+        });
+        if (res.status === 429) throw new Error("Trop de demandes, réessaie dans quelques minutes.");
+        if (!res.ok) throw new Error("Envoi impossible.");
+        data = { ok: true, unknown: true };
+      }
+    } else {
+      const res = await fetch(`${CONFIG.apiUrl}/api/devis`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) throw new Error(data.error || "Envoi impossible");
+    }
 
+    if (data.unknown) setMsg("ok", payload.discord
+      ? "✅ Demande envoyée ! Si tu es sur le serveur Discord, regarde tes MP : je te réponds là-bas sous 24 h."
+      : "✅ Demande envoyée ! Je te réponds par email sous 24 h.");
+    else
     if (data.linked) setMsg("ok", data.existing
       ? "✅ Demande ajoutée à ton ticket en cours ! Je te réponds en MP Discord."
       : "✅ Demande envoyée ! Regarde tes MP Discord, je te réponds là-bas sous 24 h.");
