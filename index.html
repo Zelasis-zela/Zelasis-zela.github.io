@@ -7,17 +7,19 @@
   <meta name="description" content="Bots Discord sur mesure : modération, tickets, économie, niveaux. Devis gratuit, réponse sous 24 h." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="avatar.webp" type="image/webp" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="nav" id="nav">
     <div class="container nav__inner">
       <a href="#" class="logo">
-        <span class="logo__mark">◈</span>
+        <img class="logo__mark" src="avatar.webp" alt="" width="32" height="32" />
         <span class="logo__text" data-brand>Zelasis</span>
       </a>
       <nav class="nav__links" id="navLinks">
+        <a href="#moi">Qui suis-je</a>
         <a href="#modules">Modules</a>
         <a href="#simulateur">Simulateur</a>
         <a href="#packs">Packs</a>
@@ -33,13 +35,10 @@
 
   <main>
     <section class="hero">
-      <div class="hero__glow"></div>
       <div class="container hero__grid">
         <div class="hero__text">
-          <span class="pill"><span class="dot"></span> Commandes ouvertes · réponse sous 24 h</span>
-          <h1>Ton serveur mérite un bot qui gère
-            <span class="rotator" id="rotator">la modération.</span>
-          </h1>
+          <p class="status">Commandes ouvertes · réponse sous 24 h</p>
+          <h1>Ton bot Discord, codé à la main pour <span class="accent-word">ton serveur</span>.</h1>
           <p class="lead">Des bots Discord codés sur mesure pour ta communauté. Modules dès <strong>5 €</strong>, bots complets dès <strong>15 €</strong>. Slash commands, code propre et support après livraison.</p>
           <div class="hero__actions">
             <a href="#simulateur" class="btn btn--primary">Calculer mon prix</a>
@@ -63,37 +62,66 @@
       </div>
     </section>
 
-    <div class="marquee">
-      <div class="marquee__track">
-        <span>Tickets</span><span>Modération</span><span>Logs</span><span>Niveaux & XP</span><span>Économie</span><span>Giveaways</span><span>Auto-rôles</span><span>Bienvenue</span><span>Mini-jeux</span><span>Musique</span><span>Dashboard web</span><span>Vérification</span>
-        <span>Tickets</span><span>Modération</span><span>Logs</span><span>Niveaux & XP</span><span>Économie</span><span>Giveaways</span><span>Auto-rôles</span><span>Bienvenue</span><span>Mini-jeux</span><span>Musique</span><span>Dashboard web</span><span>Vérification</span>
+    <section class="section section--alt about" id="moi">
+      <div class="container about__grid">
+        <div class="about__card">
+          <div class="about__banner"></div>
+          <div class="about__avatar">
+            <span aria-hidden="true">Z</span>
+            <img src="avatar.webp" alt="Avatar Discord de Zelasis" width="92" height="92" onerror="this.remove()" />
+            <i class="about__online" title="En ligne"></i>
+          </div>
+          <div class="about__id">
+            <strong data-brand>Zelasis</strong>
+            <span data-discord-user></span>
+          </div>
+          <dl class="about__facts">
+            <div><dt>Je code avec</dt><dd>discord.js · discord.py</dd></div>
+            <div><dt>Valorant</dt><dd>Ex semi-pro · peak 831 RR</dd></div>
+            <div><dt>Réponse</dt><dd>Sous 24 h, en MP</dd></div>
+          </dl>
+        </div>
+        <div class="about__text">
+          <h2>Qui code ton bot ?</h2>
+          <p>Moi, c'est <strong data-brand>Zelasis</strong>. Je code des bots Discord depuis un peu moins d'un an, d'abord pour mes propres serveurs. Chaque bot que je livre, je l'écris moi-même et je le teste sur un serveur de démo avant de te le donner.</p>
+          <p>Avant le code, j'ai joué à Valorant en semi-pro (peak 831 RR). Les serveurs gaming et esport, je connais leurs besoins de l'intérieur : tickets qui débordent, modération le soir des matchs, rôles par équipe.</p>
+          <p>Tu me parles directement, pas à une agence : c'est moi qui lis ta demande, moi qui code, et moi qui réponds après la livraison.</p>
+          <h3 class="about__sub">Mes bots en service</h3>
+          <ul class="projects">
+            <li><strong>SH Bot</strong><span>Bot esport complet : coaching, recrutement, résultats de matchs, tournois, LFG, alertes Twitch, vocaux et tickets.</span></li>
+            <li><strong>Smurf bot</strong><span>Repère les smurfs : <code>/check</code>, <code>/compare</code>, <code>/report</code>, <code>/watchlist</code>.</span></li>
+            <li><strong>WMatesBot</strong><span>Le bot de la team W Mates Esport : inscriptions, tournois, rôles d'équipe, vocaux temporaires, notifs de live.</span></li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </section>
 
     <section class="section" id="modules">
       <div class="container">
-        <div class="section__head reveal">
-          <span class="eyebrow">Modules</span>
+        <div class="section__head">
           <h2>Des briques à la carte</h2>
           <p>Ajoute-les à ton bot existant ou combine-les pour en créer un nouveau.</p>
         </div>
         <div class="tiers">
-          <article class="tier reveal">
+          <article class="tier">
             <span class="tier__level lvl-1">Simple</span>
             <h3>Commandes de base</h3>
             <div class="tier__price">5 €<small>/ module</small></div>
+            <p class="cmds"><code>/embed</code><code>/sondage</code><code>/serveur</code></p>
             <ul><li>Embeds personnalisés</li><li>Sondages & suggestions</li><li>Infos serveur / membre</li><li>Commandes utilitaires</li></ul>
           </article>
-          <article class="tier reveal">
+          <article class="tier">
             <span class="tier__level lvl-2">Intermédiaire</span>
             <h3>Gestion de serveur</h3>
             <div class="tier__price">15 €<small>/ module</small></div>
+            <p class="cmds"><code>/ticket</code><code>/ban</code><code>/warn</code><code>/logs</code></p>
             <ul><li>Tickets avec transcripts</li><li>Modération & logs</li><li>Bienvenue & auto-rôles</li><li>Vérification anti-raid</li></ul>
           </article>
-          <article class="tier reveal">
+          <article class="tier">
             <span class="tier__level lvl-3">Avancé</span>
             <h3>Systèmes complets</h3>
             <div class="tier__price">50 €<small>/ module</small></div>
+            <p class="cmds"><code>/daily</code><code>/shop</code><code>/rank</code><code>/giveaway</code></p>
             <ul><li>Économie & boutique</li><li>Niveaux / XP avec cartes de rang</li><li>Giveaways, musique, mini-jeux</li><li>Intégrations API</li></ul>
           </article>
         </div>
@@ -102,22 +130,21 @@
 
     <section class="section section--alt" id="simulateur">
       <div class="container">
-        <div class="section__head reveal">
-          <span class="eyebrow">Simulateur</span>
+        <div class="section__head">
           <h2>Compose ton bot</h2>
           <p>Clique sur les modules qui t'intéressent, le prix se calcule en direct.</p>
         </div>
-        <div class="sim reveal">
+        <div class="sim">
           <div class="sim__groups" id="simGroups"></div>
           <aside class="sim__total">
-            <span class="eyebrow">Total estimé</span>
+            <span class="sim__label">Total estimé</span>
             <div class="sim__price"><span id="simPrice">0</span> €</div>
             <div class="sim__monthly" id="simMonthly"></div>
             <p class="sim__summary" id="simSummary">Aucun module sélectionné</p>
             <label class="switch">
               <input type="checkbox" id="simHosting" />
               <span class="switch__ui"></span>
-              Hébergement 24/7 (<span data-hosting-price></span> €/mois)
+              <span>Hébergement 24/7 (<span data-hosting-price></span> €/mois)</span>
             </label>
             <a href="#devis" class="btn btn--primary btn--block" id="simQuote">Demander ce devis</a>
             <button class="btn btn--ghost btn--block" id="simReset">Réinitialiser</button>
@@ -129,20 +156,19 @@
 
     <section class="section" id="packs">
       <div class="container">
-        <div class="section__head reveal">
-          <span class="eyebrow">Packs</span>
+        <div class="section__head">
           <h2>Choisis ta formule</h2>
           <p>Prix de départ. Le tarif final dépend de ton cahier des charges.</p>
         </div>
         <div class="packs">
-          <article class="pack reveal">
+          <article class="pack">
             <h3>Starter</h3>
             <p class="pack__sub">Bot prêt à l'emploi</p>
             <div class="pack__price"><small>dès</small> 15 €</div>
             <ul><li>Modération + logs</li><li>Configuration par fichier</li><li>Guide d'installation</li><li>Licence d'utilisation</li></ul>
             <a href="#devis" class="btn btn--ghost btn--block" data-pack="Starter">Choisir Starter</a>
           </article>
-          <article class="pack pack--featured reveal">
+          <article class="pack pack--featured">
             <span class="pack__badge">Populaire</span>
             <h3>Sur mesure</h3>
             <p class="pack__sub">Bot dédié à ton serveur</p>
@@ -150,7 +176,7 @@
             <ul><li>4 modules simples ou intermédiaires (+30 € par module avancé)</li><li>Nom, avatar et couleurs à ton image</li><li>Base de données incluse</li><li>Code source fourni</li><li>2 retouches + 30 jours de support</li></ul>
             <a href="#devis" class="btn btn--primary btn--block" data-pack="Sur mesure">Demander un devis</a>
           </article>
-          <article class="pack reveal">
+          <article class="pack">
             <h3>Premium</h3>
             <p class="pack__sub">Projet complexe, multi-serveur</p>
             <div class="pack__price"><small>dès</small> 350 €</div>
@@ -159,7 +185,7 @@
           </article>
         </div>
 
-        <div class="hosting reveal">
+        <div class="hosting">
           <div>
             <h3>Hébergement & maintenance</h3>
             <p>Ton bot en ligne 24/7, mises à jour de l'API Discord suivies, corrections incluses.</p>
@@ -167,7 +193,7 @@
           <div class="hosting__price"><span data-hosting-price></span> €<small>/ mois</small></div>
         </div>
 
-        <div class="compare reveal">
+        <div class="compare">
           <table>
             <thead>
               <tr><th></th><th>Starter</th><th class="hl">Sur mesure</th><th>Premium</th></tr>
@@ -189,13 +215,12 @@
 
     <section class="section section--alt">
       <div class="container">
-        <div class="section__head reveal">
-          <span class="eyebrow">Aperçus</span>
+        <div class="section__head">
           <h2>Ce que ton bot peut faire</h2>
           <p>Quelques exemples de modules tels qu'ils apparaissent sur ton serveur.</p>
         </div>
         <div class="previews">
-          <div class="preview reveal">
+          <div class="preview">
             <div class="embed">
               <div class="embed__title">🎫 Besoin d'aide ?</div>
               <p>Choisis une catégorie, un membre du staff te répond rapidement.</p>
@@ -203,7 +228,7 @@
             </div>
             <div class="preview__label"><strong>Panneau de tickets</strong><span>Intermédiaire · 15 €</span></div>
           </div>
-          <div class="preview reveal">
+          <div class="preview">
             <div class="embed embed--red">
               <div class="embed__title">🛡️ Logs de modération</div>
               <div class="logline"><span>Membre banni · spam</span><time>21:04</time></div>
@@ -212,7 +237,7 @@
             </div>
             <div class="preview__label"><strong>Logs de modération</strong><span>Intermédiaire · 15 €</span></div>
           </div>
-          <div class="preview reveal">
+          <div class="preview">
             <div class="embed embed--gold">
               <div class="embed__title">💰 Boutique</div>
               <div class="balance">Solde : <strong>12 450</strong> coins</div>
@@ -221,7 +246,7 @@
             </div>
             <div class="preview__label"><strong>Économie & boutique</strong><span>Avancé · 50 €</span></div>
           </div>
-          <div class="preview reveal">
+          <div class="preview">
             <div class="embed embed--blue">
               <div class="embed__title">⭐ Carte de rang</div>
               <div class="rank">
@@ -238,52 +263,49 @@
         </div>
 
         <div class="guarantees">
-          <div class="g reveal"><span class="g__icon">✓</span><h4>Satisfait ou corrigé</h4><p>Je corrige jusqu'à ce que le bot fasse ce qui était prévu au devis.</p></div>
-          <div class="g reveal"><span class="g__icon">🔒</span><h4>Paiement sécurisé</h4><p>PayPal ou virement. Acompte au lancement, solde à la livraison.</p></div>
-          <div class="g reveal"><span class="g__icon">🧪</span><h4>Testé avant livraison</h4><p>Chaque bot est vérifié sur un serveur de démo.</p></div>
-          <div class="g reveal"><span class="g__icon">⚡</span><h4>Devis gratuit</h4><p>Sans engagement, réponse sous 24 h.</p></div>
+          <div class="g"><h3>Satisfait ou corrigé</h3><p>Je corrige jusqu'à ce que le bot fasse ce qui était prévu au devis.</p></div>
+          <div class="g"><h3>Paiement sécurisé</h3><p>PayPal ou virement. Acompte au lancement, solde à la livraison.</p></div>
+          <div class="g"><h3>Testé avant livraison</h3><p>Chaque bot est vérifié sur un serveur de démo.</p></div>
+          <div class="g"><h3>Devis gratuit</h3><p>Sans engagement, réponse sous 24 h.</p></div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="section__head reveal">
-          <span class="eyebrow">Process</span>
+        <div class="section__head">
           <h2>Comment ça se passe</h2>
         </div>
         <ol class="steps">
-          <li class="reveal"><span>01</span><h4>Tu expliques ton besoin</h4><p>Fonctionnalités, serveur, délai souhaité.</p></li>
-          <li class="reveal"><span>02</span><h4>Devis gratuit</h4><p>Prix fixe et délai clair, sans surprise.</p></li>
-          <li class="reveal"><span>03</span><h4>Développement</h4><p>Acompte au lancement, tests sur serveur de démo.</p></li>
-          <li class="reveal"><span>04</span><h4>Livraison</h4><p>Installation, guide et support inclus.</p></li>
+          <li><span>1</span><h3>Tu expliques ton besoin</h3><p>Fonctionnalités, serveur, délai souhaité.</p></li>
+          <li><span>2</span><h3>Devis gratuit</h3><p>Prix fixe et délai clair, sans surprise.</p></li>
+          <li><span>3</span><h3>Développement</h3><p>Acompte au lancement, tests sur serveur de démo.</p></li>
+          <li><span>4</span><h3>Livraison</h3><p>Installation, guide et support inclus.</p></li>
         </ol>
       </div>
     </section>
 
     <section class="section section--alt" id="faq">
       <div class="container container--narrow">
-        <div class="section__head reveal">
-          <span class="eyebrow">FAQ</span>
+        <div class="section__head">
           <h2>Questions fréquentes</h2>
         </div>
         <div class="faq">
-          <details class="reveal"><summary>Est-ce que je reçois le code source ?</summary><p>Oui pour les packs Sur mesure et Premium. Le Starter est vendu en licence d'utilisation.</p></details>
-          <details class="reveal"><summary>Quels moyens de paiement acceptes-tu ?</summary><p>Virement bancaire ou PayPal. Acompte de 50 % au lancement, solde à la livraison.</p></details>
-          <details class="reveal"><summary>Et si je veux des modifications plus tard ?</summary><p>Les petites corrections sont incluses pendant la période de support. Les nouvelles fonctionnalités sont chiffrées à part.</p></details>
-          <details class="reveal"><summary>Dois-je héberger le bot moi-même ?</summary><p>Comme tu préfères : je fournis un guide d'installation, ou je m'en occupe avec l'option hébergement.</p></details>
-          <details class="reveal"><summary>Combien de temps prend la création ?</summary><p>Entre 3 et 10 jours selon la complexité. Le délai exact est indiqué dans le devis.</p></details>
+          <details><summary>Est-ce que je reçois le code source ?</summary><p>Oui pour les packs Sur mesure et Premium. Le Starter est vendu en licence d'utilisation.</p></details>
+          <details><summary>Quels moyens de paiement acceptes-tu ?</summary><p>Virement bancaire ou PayPal. Acompte de 50 % au lancement, solde à la livraison.</p></details>
+          <details><summary>Et si je veux des modifications plus tard ?</summary><p>Les petites corrections sont incluses pendant la période de support. Les nouvelles fonctionnalités sont chiffrées à part.</p></details>
+          <details><summary>Dois-je héberger le bot moi-même ?</summary><p>Comme tu préfères : je fournis un guide d'installation, ou je m'en occupe avec l'option hébergement.</p></details>
+          <details><summary>Combien de temps prend la création ?</summary><p>Entre 3 et 10 jours selon la complexité. Le délai exact est indiqué dans le devis.</p></details>
         </div>
       </div>
     </section>
 
     <section class="section" id="devis">
       <div class="container">
-        <div class="quote reveal">
+        <div class="quote">
           <div class="quote__intro">
-            <span class="eyebrow">Devis</span>
             <h2>Demande ton devis gratuit</h2>
-            <p>Remplis le formulaire : ta demande s'ouvre dans ta messagerie, prête à être envoyée.</p>
+            <p>Remplis le formulaire : ta demande m'arrive directement sur Discord et je te réponds en MP.</p>
             <ul class="contact">
               <li><span>Discord</span><a href="#" data-discord target="_blank" rel="noopener">Rejoindre le serveur</a></li>
               <li><span>Pseudo</span><b data-discord-user></b></li>
@@ -331,7 +353,7 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <a href="#" class="logo"><span class="logo__mark">◈</span><span class="logo__text" data-brand>Zelasis</span></a>
+      <a href="#" class="logo"><img class="logo__mark" src="avatar.webp" alt="" width="32" height="32" /><span class="logo__text" data-brand>Zelasis</span></a>
       <p>© <span id="year"></span> <span data-brand>Zelasis</span> · Projet indépendant, non affilié à Discord Inc.</p>
     </div>
   </footer>
