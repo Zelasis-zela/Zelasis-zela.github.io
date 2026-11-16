@@ -1,9 +1,14 @@
+/* =========================================================
+   Zelasis — thème « Discord »
+   Fonds et gris repris de l'appli Discord, blurple pour les actions,
+   rouge-orangé de l'avatar Zelasis comme couleur perso.
+   ========================================================= */
 :root {
-  --bg: #2b2d31;          
-  --bg-alt: #232428;      
-  --card: #313338;        
-  --field: #1e1f22;       
-  --line: #3f4147;        
+  --bg: #2b2d31;          /* page (comme la liste des salons) */
+  --bg-alt: #232428;      /* sections alternées */
+  --card: #313338;        /* cartes (comme la zone de chat) */
+  --field: #1e1f22;       /* champs, zones creuses */
+  --line: #3f4147;        /* séparateurs */
   --text: #f2f3f5;
   --text-2: #dbdee1;
   --muted: #b5bac1;
@@ -11,8 +16,8 @@
   --blurple: #5865f2;
   --blurple-hover: #4752c4;
   --link: #949cf7;
-  --accent: #ff3b1d;      
-  --amber: #feb000;       
+  --accent: #ff3b1d;      /* rouge Zelasis (avatar) */
+  --amber: #feb000;       /* barre jaune sous le Z */
   --cream: #f2ede3;
   --accent-ink: #1a0803;
   --online: #23a55a;
@@ -45,6 +50,7 @@ input, textarea { caret-color: var(--text); }
 .container--narrow { width: min(1120px, 92%); }
 .container--narrow > * { max-width: 760px; }
 
+/* ========== Boutons (style Discord) ========== */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
   min-height: 44px; padding: 0 1.25rem; border-radius: 3px; border: 0;
@@ -58,6 +64,7 @@ input, textarea { caret-color: var(--text); }
 .btn--ghost { background: #4e5058; color: #fff; }
 .btn--ghost:hover { background: #6d6f78; }
 
+/* ========== Nav ========== */
 .nav { position: fixed; inset: 0 0 auto; z-index: 50; background: var(--field); box-shadow: 0 1px 0 rgba(0,0,0,.3); }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
 .logo { display: flex; align-items: center; gap: .6rem; color: var(--text); font-weight: 800; font-size: 1.1rem; text-decoration: none !important; }
@@ -69,6 +76,7 @@ input, textarea { caret-color: var(--text); }
 .nav__burger { display: none; background: none; border: 0; width: 40px; height: 40px; cursor: pointer; flex-direction: column; justify-content: center; gap: 5px; align-items: center; }
 .nav__burger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
 
+/* ========== Hero ========== */
 .hero { padding: 132px 0 88px; }
 .hero__grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 3.5rem; align-items: center; }
 .status { color: var(--muted); font-size: .9rem; font-weight: 600; display: flex; align-items: center; gap: .5rem; }
@@ -82,6 +90,7 @@ input, textarea { caret-color: var(--text); }
 .stats strong { display: block; color: var(--text); font-size: 1rem; }
 .stats span { color: var(--faint); font-size: .85rem; }
 
+/* Mockup du chat Discord */
 .chat { background: var(--card); border-radius: var(--radius); overflow: hidden; box-shadow: 0 16px 40px -12px rgba(0,0,0,.55); }
 .chat__head { display: flex; align-items: center; gap: .4rem; padding: .8rem 1rem; box-shadow: 0 1px 0 rgba(0,0,0,.25); color: var(--text); font-weight: 600; font-size: .95rem; }
 .chat__hash { color: var(--faint); font-size: 1.3rem; font-weight: 500; }
@@ -107,12 +116,14 @@ input, textarea { caret-color: var(--text); }
 .msg__embed span { color: var(--muted); }
 .typing { color: var(--muted); font-size: .82rem; font-weight: 600; }
 
+/* ========== Sections ========== */
 .section { padding: 96px 0; }
 .section--alt { background: var(--bg-alt); }
 .section__head { max-width: 640px; margin: 0 0 2.6rem; }
 .section__head h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: .6rem; }
 .section__head p { color: var(--muted); font-size: 1.05rem; }
 
+/* Liste avec coche (icône dessinée) */
 .tier li, .pack li { position: relative; padding: .4rem 0 .4rem 1.7rem; color: var(--text-2); font-size: .95rem; }
 .tier li::before, .pack li::before {
   content: ""; position: absolute; left: 0; top: .62rem; width: 1.05rem; height: 1.05rem; background: var(--online);
@@ -120,6 +131,7 @@ input, textarea { caret-color: var(--text); }
           mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
+/* Modules : niveaux affichés comme des rôles Discord */
 .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .tier { background: var(--card); border-radius: var(--radius); padding: 1.6rem; }
 .tier__level {
@@ -135,6 +147,7 @@ input, textarea { caret-color: var(--text); }
 .tier__price small { font-size: .9rem; color: var(--faint); font-weight: 500; margin-left: .3rem; }
 .cmds { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: 1rem; }
 
+/* Simulateur */
 .sim { display: grid; grid-template-columns: 1fr 340px; gap: 1rem; align-items: start; }
 .sim__group { background: var(--card); border-radius: var(--radius); padding: 1.3rem; margin-bottom: 1rem; }
 .sim__group-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: .9rem; }
@@ -156,6 +169,7 @@ input, textarea { caret-color: var(--text); }
 .sim__summary { color: var(--muted); font-size: .9rem; }
 .sim__note { color: var(--faint); font-size: .8rem; }
 
+/* Interrupteur façon paramètres Discord */
 .switch { display: flex; align-items: center; justify-content: space-between; gap: .8rem; font-size: .92rem; color: var(--text-2); cursor: pointer; padding: .75rem 0; border-block: 1px solid var(--line); }
 .switch input { position: absolute; opacity: 0; pointer-events: none; }
 .switch__ui { order: 2; flex: none; width: 40px; height: 24px; border-radius: 99px; background: #80848e; position: relative; transition: background-color .2s; }
@@ -164,6 +178,7 @@ input, textarea { caret-color: var(--text); }
 .switch input:checked + .switch__ui::after { transform: translateX(16px); }
 .switch input:focus-visible + .switch__ui { outline: 2px solid var(--blurple); outline-offset: 2px; }
 
+/* Packs */
 .packs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; align-items: stretch; }
 .pack { position: relative; background: var(--card); border-radius: var(--radius); padding: 1.8rem 1.6rem; display: flex; flex-direction: column; }
 .pack ul { flex: 1; margin-bottom: 1.4rem; }
@@ -191,6 +206,7 @@ input, textarea { caret-color: var(--text); }
 .compare .yes { color: var(--online); font-weight: 700; }
 .compare .no { color: var(--faint); }
 
+/* Aperçus (embeds Discord) */
 .previews { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
 .preview { background: var(--card); border-radius: var(--radius); padding: 1rem; display: flex; flex-direction: column; gap: .9rem; }
 .embed { flex: 1; background: var(--bg); border-left: 4px solid var(--accent); border-radius: 4px; padding: .9rem 1rem; font-size: .88rem; color: var(--text-2); }
@@ -224,12 +240,14 @@ input, textarea { caret-color: var(--text); }
 .g h3 { font-size: 1rem; margin-bottom: .3rem; }
 .g p { color: var(--muted); font-size: .9rem; }
 
+/* Process */
 .steps { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
 .steps li { padding: 1.5rem 1.3rem; background: var(--card); border-radius: var(--radius); }
 .steps li span { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-weight: 800; font-size: .85rem; }
 .steps h3 { font-size: 1.05rem; margin: .8rem 0 .3rem; }
 .steps p { color: var(--muted); font-size: .92rem; }
 
+/* FAQ */
 .faq details { border-radius: var(--radius); background: var(--card); margin-bottom: .6rem; overflow: hidden; }
 .faq summary { cursor: pointer; padding: 1rem 1.2rem; color: var(--text); font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
 .faq summary::-webkit-details-marker { display: none; }
@@ -237,6 +255,7 @@ input, textarea { caret-color: var(--text); }
 .faq details[open] summary::after { transform: rotate(-135deg) translateY(-3px); }
 .faq details p { padding: 0 1.2rem 1.1rem; color: var(--muted); }
 
+/* Devis : formulaire façon fenêtre modale Discord */
 .quote { display: grid; grid-template-columns: .9fr 1.1fr; gap: 3rem; align-items: start; }
 .quote h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: .7rem; }
 .quote__intro > p { color: var(--muted); }
@@ -263,10 +282,12 @@ input, textarea { caret-color: var(--text); }
 .form button[disabled] { opacity: .6; cursor: wait; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 
+/* Footer */
 .footer { padding: 2rem 0; background: var(--field); }
 .footer__inner { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
 .footer p { color: var(--faint); font-size: .88rem; }
 
+/* ========== Responsive ========== */
 @media (max-width: 1024px) {
   .previews { grid-template-columns: repeat(2, 1fr); }
   .guarantees, .steps { grid-template-columns: repeat(2, 1fr); }
@@ -296,6 +317,7 @@ input, textarea { caret-color: var(--text); }
   html { scroll-behavior: auto; }
 }
 
+/* ========== Qui code ton bot ? (carte de profil façon Discord) ========== */
 .about__grid { display: grid; grid-template-columns: 340px 1fr; gap: 3rem; align-items: start; }
 .about__card { background: var(--field); border-radius: var(--radius); overflow: hidden; padding-bottom: 1.2rem; }
 .about__banner { height: 120px; background: #120706 url(banner.webp) center / cover no-repeat; }

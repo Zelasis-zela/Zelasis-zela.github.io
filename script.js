@@ -1,10 +1,17 @@
+/* =========================================================
+   CONFIGURATION — modifie ces valeurs avec tes infos
+   ========================================================= */
 const CONFIG = {
   brand: "Zelasis",
-  email: "zelasis.pro@gmail.com",          
+  email: "zelasis.pro@gmail.com",          // adresse qui reçoit les devis
   discordInvite: "https://discord.gg/VWMYkzDHWJ",
   discordUser: "_zelasis__",
-  hostingPrice: 10,                        
+  hostingPrice: 10,                        // € / mois
+  // Adresse publique de ton bot (sans / à la fin), ex : "https://zelasis-bot.up.railway.app"
+  // Laisse vide pour que le formulaire ouvre simplement la messagerie (mailto).
   apiUrl: "",
+  // OU (si ton bot est sur un panel sans HTTPS, ex. AdKyNet) : l'URL d'un webhook Discord
+  // créé dans un salon privé (Paramètres du salon > Intégrations > Webhooks > Copier l'URL)
   webhookUrl: "https://discord.com/api/webhooks/1571970553378635797/xXv4qc0mKRskzKBSjTULgKCJUPnEmqgL9Lvd2uN4FEoZ7WRn8CANQVpIhe1jIgbLXZ20",
   modules: [
     { level: "Simple", price: 5,
@@ -16,6 +23,7 @@ const CONFIG = {
   ],
 };
 
+/* ========== Injection des infos de config ========== */
 document.querySelectorAll("[data-brand]").forEach(el => el.textContent = CONFIG.brand);
 document.querySelectorAll("[data-discord]").forEach(el => el.href = CONFIG.discordInvite);
 document.querySelectorAll("[data-discord-user]").forEach(el => el.textContent = CONFIG.discordUser);
@@ -24,12 +32,14 @@ document.querySelectorAll("[data-hosting-price]").forEach(el => el.textContent =
 document.getElementById("year").textContent = new Date().getFullYear();
 document.title = `${CONFIG.brand} — Bots Discord personnalisés`;
 
+/* ========== Nav : fond au scroll + menu mobile ========== */
 const nav = document.getElementById("nav");
 const navLinks = document.getElementById("navLinks");
 addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 20), { passive: true });
 document.getElementById("burger").addEventListener("click", () => navLinks.classList.toggle("open"));
 navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => navLinks.classList.remove("open")));
 
+/* ========== Chat Discord animé ========== */
 const chatBody = document.getElementById("chatBody");
 const script = [
   { user: "Luna", cmd: "/ticket ouvrir", bot: { title: "🎫 Ticket #0217 créé", text: "Un membre du staff arrive." } },
@@ -61,6 +71,7 @@ function playChat() {
 }
 playChat();
 
+/* ========== Simulateur de prix ========== */
 const simGroups = document.getElementById("simGroups");
 const selected = new Map(); // nom -> prix
 simGroups.innerHTML = CONFIG.modules.map(g => `
@@ -100,11 +111,14 @@ document.getElementById("simReset").addEventListener("click", () => {
   updateSim();
 });
 
+/* Les boutons de packs pré-remplissent la formule */
 const form = document.getElementById("quoteForm");
 document.querySelectorAll("[data-pack]").forEach(btn =>
   btn.addEventListener("click", () => form.pack.value = btn.dataset.pack));
 
-
+/* ========== Formulaire de devis ========== */
+// Si CONFIG.apiUrl est rempli : la demande part au bot Discord (salon + MP).
+// Sinon : la messagerie du visiteur s'ouvre avec la demande pré-remplie.
 const msg = document.getElementById("formMsg");
 const submitBtn = form.querySelector('button[type="submit"]');
 const setMsg = (type, text) => { msg.className = `form__msg ${type}`; msg.textContent = text; };
@@ -128,9 +142,10 @@ form.addEventListener("submit", async e => {
     budget: form.budget.value,
     selection: selectionText(),
     message: form.message.value.trim(),
-    website: form.website.value, 
+    website: form.website.value, // piège anti-robot (reste vide pour un humain)
   };
 
+  // ----- Rien de configuré : mailto -----
   if (!CONFIG.apiUrl && !CONFIG.webhookUrl) {
     const body = [
       `Nom : ${payload.name}`, `Discord : ${payload.discord || "—"}`, `Email : ${payload.email || "—"}`,
@@ -141,6 +156,7 @@ form.addEventListener("submit", async e => {
     return setMsg("ok", "Ta messagerie s'ouvre, il ne reste plus qu'à envoyer !");
   }
 
+  // ----- Envoi au bot Discord -----
   if (!payload.discord && !payload.email) {
     form.discord.classList.add("invalid"); form.email.classList.add("invalid");
     return setMsg("err", "Indique ton pseudo Discord ou ton email pour recevoir ma réponse.");
@@ -150,6 +166,7 @@ form.addEventListener("submit", async e => {
   try {
     let data;
     if (CONFIG.webhookUrl) {
+      // Mode webhook : le bot lit ce message dans le salon et crée le salon de devis
       if (payload.website) { data = { ok: true, linked: true }; } else {
         const res = await fetch(`${CONFIG.webhookUrl}?wait=true`, {
           method: "POST",
