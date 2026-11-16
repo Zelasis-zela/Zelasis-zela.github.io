@@ -4,10 +4,8 @@ const CONFIG = {
   discordInvite: "https://discord.gg/TON-INVITE",
   discordUser: "_zelasis__",
   hostingPrice: 10,                        
-
   apiUrl: "",
- 
-  webhookUrl: "",
+  webhookUrl: "https://discord.com/api/webhooks/1571970553378635797/xXv4qc0mKRskzKBSjTULgKCJUPnEmqgL9Lvd2uN4FEoZ7WRn8CANQVpIhe1jIgbLXZ20",
   modules: [
     { level: "Simple", price: 5,
       items: ["Embeds personnalisés", "Sondages", "Suggestions", "Infos serveur", "Commandes utilitaires"] },
