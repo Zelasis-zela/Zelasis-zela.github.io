@@ -30,20 +30,6 @@ addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 20),
 document.getElementById("burger").addEventListener("click", () => navLinks.classList.toggle("open"));
 navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => navLinks.classList.remove("open")));
 
-const words = ["la modération.", "les tickets.", "l'économie.", "les niveaux.", "les giveaways.", "ta communauté."];
-const rotator = document.getElementById("rotator");
-let wi = 0, ci = words[0].length, deleting = false;
-(function type() {
-  const w = words[wi];
-  rotator.textContent = w.slice(0, ci);
-  let delay = deleting ? 40 : 80;
-  if (!deleting && ci === w.length) { delay = 1800; deleting = true; }
-  else if (deleting && ci === 0) { deleting = false; wi = (wi + 1) % words.length; delay = 300; }
-  ci += deleting ? -1 : 1;
-  if (ci > w.length) ci = w.length;
-  setTimeout(type, delay);
-})();
-
 const chatBody = document.getElementById("chatBody");
 const script = [
   { user: "Luna", cmd: "/ticket ouvrir", bot: { title: "🎫 Ticket #0217 créé", text: "Un membre du staff arrive." } },
@@ -65,7 +51,7 @@ function playChat() {
     addMsg(`<div class="typing" id="typing">${esc(CONFIG.brand)} écrit…</div>`);
     setTimeout(() => {
       document.getElementById("typing")?.remove();
-      addMsg(`<div class="msg"><div class="msg__avatar msg__avatar--bot">◈</div><div>
+      addMsg(`<div class="msg"><div class="msg__avatar msg__avatar--bot">Z</div><div>
         <div class="msg__name">${esc(CONFIG.brand)} <span class="msg__tag">BOT</span></div>
         <div class="msg__embed"><b>${esc(s.bot.title)}</b><span>${esc(s.bot.text)}</span></div></div></div>`);
       si++;
@@ -76,7 +62,7 @@ function playChat() {
 playChat();
 
 const simGroups = document.getElementById("simGroups");
-const selected = new Map(); 
+const selected = new Map(); // nom -> prix
 simGroups.innerHTML = CONFIG.modules.map(g => `
   <div class="sim__group">
     <div class="sim__group-head"><h3>${g.level}</h3><span>${g.price} € / module</span></div>
@@ -117,6 +103,7 @@ document.getElementById("simReset").addEventListener("click", () => {
 const form = document.getElementById("quoteForm");
 document.querySelectorAll("[data-pack]").forEach(btn =>
   btn.addEventListener("click", () => form.pack.value = btn.dataset.pack));
+
 
 const msg = document.getElementById("formMsg");
 const submitBtn = form.querySelector('button[type="submit"]');
@@ -205,10 +192,3 @@ form.addEventListener("submit", async e => {
 });
 form.addEventListener("input", e => e.target.classList.remove("invalid"));
 
-const io = new IntersectionObserver(entries => entries.forEach(en => {
-  if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); }
-}), { threshold: 0.12 });
-document.querySelectorAll(".reveal").forEach((el, i) => {
-  el.style.transitionDelay = `${(i % 4) * 70}ms`;
-  io.observe(el);
-});
