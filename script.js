@@ -1,7 +1,7 @@
 const CONFIG = {
   brand: "Zelasis",
   email: "zelasis.pro@gmail.com",          
-  discordInvite: "https://discord.gg/TON-INVITE",
+  discordInvite: "https://discord.gg/VWMYkzDHWJ",
   discordUser: "_zelasis__",
   hostingPrice: 10,                        
   apiUrl: "",
