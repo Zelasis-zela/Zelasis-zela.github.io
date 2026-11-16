@@ -144,7 +144,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; letter-spacin
 .tier li, .pack li { padding: .45rem 0 .45rem 1.6rem; position: relative; color: #c3c8d4; font-size: .93rem; }
 .tier li::before, .pack li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
 
-/* Simulateur */
 .sim { display: grid; grid-template-columns: 1fr 340px; gap: 1.6rem; align-items: start; }
 .sim__group { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem; margin-bottom: 1rem; }
 .sim__group-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem; }
