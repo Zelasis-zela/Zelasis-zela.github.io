@@ -7,12 +7,11 @@ const CONFIG = {
   discordInvite: "https://discord.gg/VWMYkzDHWJ",
   discordUser: "_zelasis__",
   hostingPrice: 10,                        // € / mois
-  // Adresse publique de ton bot (sans / à la fin), ex : "https://zelasis-bot.up.railway.app"
+  // Adresse de ton relais Cloudflare (sans / à la fin), ex : "https://zelasis-devis.ton-pseudo.workers.dev"
   // Laisse vide pour que le formulaire ouvre simplement la messagerie (mailto).
   apiUrl: "",
-  // OU (si ton bot est sur un panel sans HTTPS, ex. AdKyNet) : l'URL d'un webhook Discord
-  // créé dans un salon privé (Paramètres du salon > Intégrations > Webhooks > Copier l'URL)
-  webhookUrl: "https://discord.com/api/webhooks/1571970553378635797/xXv4qc0mKRskzKBSjTULgKCJUPnEmqgL9Lvd2uN4FEoZ7WRn8CANQVpIhe1jIgbLXZ20",
+  // NE METS JAMAIS l'URL d'un webhook Discord ici : le site est public et des robots la récupèrent.
+  webhookUrl: "",
   modules: [
     { level: "Simple", price: 5,
       items: ["Embeds personnalisés", "Sondages", "Suggestions", "Infos serveur", "Commandes utilitaires"] },
