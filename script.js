@@ -9,7 +9,7 @@ const CONFIG = {
   hostingPrice: 10,                        // € / mois
   // Adresse de ton relais Cloudflare (sans / à la fin), ex : "https://zelasis-devis.ton-pseudo.workers.dev"
   // Laisse vide pour que le formulaire ouvre simplement la messagerie (mailto).
-  apiUrl: "",
+  apiUrl: "https://zelasis-devis.ethan-chabenat.workers.dev",
   // NE METS JAMAIS l'URL d'un webhook Discord ici : le site est public et des robots la récupèrent.
   webhookUrl: "",
   modules: [
